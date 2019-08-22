@@ -23,6 +23,21 @@
       margin-right: 1em;
     }
   }
+  nav.navbar {
+    padding: 1em 0;
+
+    .nav-item {
+      @media (min-width: 768px) {
+        font-size: 0.8em;
+      }
+    }
+    .navbar-toggler {
+      background-color: rgba(255,255,255,.3);
+    }
+    svg {
+      fill: rgba(0, 0, 0, 0.5);
+    }
+  }
   .above {
     background: #000;
     .parent-logo {
@@ -41,9 +56,9 @@
 .header.inverted {
   background: #fff;
   a {
-    color: $primary;
+    color: $primary !important;
     svg {
-      fill: $primary;
+      fill: $primary !important;
     }
   }
 }

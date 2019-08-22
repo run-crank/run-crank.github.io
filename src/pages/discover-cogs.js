@@ -4,7 +4,7 @@ import CogList from '../components/cog-list';
 import Layout from '../components/layout';
 
 const IndexPage = () => (
-    <Layout subTitle="Discover Cogs">
+    <Layout subTitle="Discover Cogs" activeTrail="/discover-cogs">
         <main>
           <CogHero />
           <CogList />

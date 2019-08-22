@@ -8,15 +8,17 @@ import Pineapple from '../icon/pineapple.icon'
 const Footer = () => (
     <footer className="footer">
         <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="footer-content small">
+            <div className="footer-content row small">
+                <div className="col-12 col-lg-7">
+                    <div className="footer-nav">
                         <Link className="footer-link" to="/intro">Getting Started</Link>
                         <Link className="footer-link" to="/discover-cogs">Cogs</Link>
                         <Link className="footer-link" to="/intro/community">Community</Link>
                         <Link className="footer-link" to="/intro/install"><Icon className="mr-1 align-text-top" icon={Download} width={16} height={16} fill="#fff" />Install</Link>
-                        <span className="by-automaton">Made with radical hospitality by <a href="https://www.automatoninc.com?utm_source=crank"><Icon className="mr-1 align-text-top" icon={Pineapple} width={16} height={16} fill="#b69d65" />Automaton</a></span>
                     </div>
+                </div>
+                <div className="footer-by col-12 col-lg-5">
+                    <span className="by-automaton">Made with radical hospitality by <a href="https://www.automatoninc.com?utm_source=crank"><Icon className="mr-1 align-text-top" icon={Pineapple} width={16} height={16} fill="#b69d65" />Automaton</a></span>
                 </div>
             </div>
         </div>

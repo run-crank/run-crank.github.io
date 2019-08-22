@@ -36,11 +36,11 @@ export default class Template extends React.Component {
     });
 
     return (
-      <Layout subTitle={frontmatter.title}><main>
-        <div className="doc-content container mt-5 mb-5 small">
+      <Layout subTitle={frontmatter.title} activeTrail={frontmatter.path}><main>
+        <div className="doc-content container small">
           <div className="row">
-            <div className="col-3">
-              <ul className="nav flex-column">
+            <div className="col-12 col-lg-3 nav-column">
+              <ul className="nav flex-lg-column">
                 {navBar.edges.map((item, i) => (
                   <li className={"nav-item" + (item.node.frontmatter.path === frontmatter.path ? ' active' : '')} key={item.node.frontmatter.path}>
                     <Link to={item.node.frontmatter.path}>
@@ -59,7 +59,7 @@ export default class Template extends React.Component {
                 ))}
               </ul>
             </div>
-            <div className="col-9">
+            <div className="col-12 col-lg-9">
             <h1>{frontmatter.title}</h1>
             <div
               className="content"

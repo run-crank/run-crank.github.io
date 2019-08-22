@@ -27,12 +27,12 @@ const Features = () => (
                 <div className="container-wrapper" key={i}>
                     <div className="container">
                         <div className="row pt-5 pb-5">
-                            <div className={"col-6" + (i % 2 ? ' order-2' : '')}>
+                            <div className={"col-sm-12 col-lg-6" + (i % 2 ? ' order-lg-2' : '')}>
                                 <span className="badge badge-secondary">{item.title}</span>
                                 <h3 className="features-title mt-2 mb-3">{item.subHead}</h3>
                                 <p dangerouslySetInnerHTML={{__html: item.copy}} />
                             </div>
-                            <div className="col-6">
+                            <div className="col-sm-12 col-lg-6">
                                 <img className="feature-image" src={item.img} />
                             </div>
                         </div>

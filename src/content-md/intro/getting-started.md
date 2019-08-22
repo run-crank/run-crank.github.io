@@ -63,7 +63,7 @@ A Browser  submit the form by clicking (?<domQuerySelector>.+)
 
 Looking for more Cogs?
 
-<a class="btn btn-primary" role="button" href="/discover-cogs">Discover More Cogs Here</a>
+<a class="btn btn-secondary" role="button" href="/discover-cogs">Discover More Cogs Here</a>
 
 ---
 
@@ -133,9 +133,9 @@ Your First Scenario
 scenario will fail. But the point wasn't to get a passing scenario, it was to
 understand how to use Crank!
 
-<a class="btn btn-primary" role="button" href="/intro/scenarios">Learn More About Scenarios</a>
-<a class="btn btn-outline-secondary" role="button" href="/discover-cogs">Find Cogs for Your Stack</a>
-<a class="btn btn-outline-secondary" role="button" href="https://crank.automatoninc.com">Build a Cog</a>
+<a class="btn btn-secondary mb-2" role="button" href="/intro/scenarios">Learn More About Scenarios</a>
+<a class="btn btn-outline-secondary mb-2" role="button" href="/discover-cogs">Find Cogs for Your Stack</a>
+<a class="btn btn-outline-secondary mb-2" role="button" href="https://crank.automatoninc.com">Build a Cog</a>
 
 [install]: /intro/install
 [scenarios-in-detail]: /intro/scenarios

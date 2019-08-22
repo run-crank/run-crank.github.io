@@ -1,6 +1,10 @@
 @import '../../sass/settings';
 
 .doc-content {
+  @media (min-width: 992px) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
   h1, h2, h3 {
     font-weight: 300
   }
@@ -10,14 +14,29 @@
   img {
     max-width: 100%;
   }
+  .nav-column {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    > .nav {
+      border-bottom: 1px solid #eee;
+    }
+  }
   .nav .nav {
     padding: .5em 0 .5em 1em;
+
+    // Hide the TOC on small devices.
+    @media (max-width: 991.98px) {
+      display: none;
+    }
+
     .nav-item {
       padding-bottom: 0;
     }
   }
   .nav-item {
     padding-bottom: .25em; 
+    padding-right: 1em;
   }
   .nav-item.active > a {
     color: #8c7542;

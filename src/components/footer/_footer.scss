@@ -2,9 +2,20 @@
   width: 100%;
   background-color: #333;
   &-content {
-    height: 120px;
+    height: 110px;
     display: flex;
     align-items: center;
+  }
+  &-nav {
+    display: flex;
+    @media (max-width: 991.98px) {
+      margin-top: 1em;
+    }
+  }
+  &-by {
+    @media (max-width: 991.98px) {
+      margin-bottom: 1em;
+    }
   }
   .footer-link {
     display: block;
@@ -13,5 +24,8 @@
   .by-automaton {
     margin-left: auto;
     color: #777;
+    @media (min-width: 992px) {
+      float: right;
+    }
   }
 }
