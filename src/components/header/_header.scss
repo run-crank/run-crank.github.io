@@ -1,0 +1,46 @@
+@import "../../../sass/settings";
+
+.header {
+  background: $primary;
+  a, a:hover {
+    color: #fff;
+  }
+  width: 100%;
+  &-content {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &-nav-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &-item {
+      margin-right: 1em;
+    }
+  }
+  .above {
+    background: #000;
+    .parent-logo {
+      width: 175px;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      transition: opacity .3s;
+      opacity: 1;
+    }
+    .parent-logo:hover {
+      opacity: .8;
+    }
+  }
+}
+
+.header.inverted {
+  background: #fff;
+  a {
+    color: $primary;
+  }
+}

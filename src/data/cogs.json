@@ -1,0 +1,18 @@
+{
+  "cogs": [{
+    "label": "A Browser",
+    "name": "automatoninc/web",
+    "img": "/img/cogs/web.png",
+    "homepage": "https://github.com/run-crank/cog-web"
+  }, {
+    "label": "Marketo",
+    "name": "automatoninc/marketo",
+    "img": "/img/cogs/marketo.png",
+    "homepage": "https://github.com/run-crank/cog-marketo"
+  }, {
+    "label": "Salesforce",
+    "name": "automatoninc/salesforce",
+    "img": "/img/cogs/salesforce.png",
+    "homepage": "https://github.com/run-crank/cog-marketo"
+  }]
+}

@@ -1,0 +1,15 @@
+import React from 'react';
+import Features from '../components/features';
+import HomepageHero from '../components/homepage-hero';
+import Layout from '../components/layout';
+
+const IndexPage = () => (
+    <Layout invertHeaderColors={true}>
+        <main>
+            <HomepageHero />
+            <Features />
+        </main>
+    </Layout>
+);
+
+export default IndexPage;

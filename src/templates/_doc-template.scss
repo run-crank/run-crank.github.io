@@ -1,0 +1,60 @@
+@import '../../sass/settings';
+
+.doc-content {
+  h1, h2, h3 {
+    font-weight: 300
+  }
+  h2 {
+    margin-top: 1em;
+  }
+  img {
+    max-width: 100%;
+  }
+  .nav .nav {
+    padding: .5em 0 .5em 1em;
+    .nav-item {
+      padding-bottom: 0;
+    }
+  }
+  .nav-item {
+    padding-bottom: .25em; 
+  }
+  .nav-item.active > a {
+    color: #8c7542;
+    text-decoration: underline;
+  }
+  code:not([class]) {
+    color: #222;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.8em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    background: #ededed;
+    padding: .25em;
+  }
+  aside.notice {
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: $secondary;
+    line-height: 1.6;
+    color: #fff;
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}

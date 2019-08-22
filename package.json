@@ -1,0 +1,62 @@
+{
+  "name": "gatsby-react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "start": "node server.js",
+    "gh-pages": "gatsby build --prefix-paths && gh-pages -d public",
+    "lint": "eslint src --fix",
+    "dev": "(shx --silent rm -rf public || shx true) && gatsby develop",
+    "server": "cross-env NODE_ENV=development DEBUG=api nodemon server.js"
+  },
+  "author": "Prototype Interactive",
+  "license": "MIT",
+  "dependencies": {
+    "basic-auth": "^2.0.1",
+    "compression": "^1.7.3",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "github-slugger": "^1.2.1",
+    "helmet": "^3.15.0",
+    "prismjs": "^1.17.1",
+    "react-helmet": "^5.2.0",
+    "serve-static": "^1.13.2"
+  },
+  "devDependencies": {
+    "@prototype-interactive/eslint-config": "^0.1.1",
+    "autoprefixer": "^9.4.4",
+    "bootstrap": "^4.3.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.12.0",
+    "gatsby": "^2.13.72",
+    "gatsby-plugin-google-analytics": "^2.0.9",
+    "gatsby-plugin-postcss": "^2.0.2",
+    "gatsby-plugin-postcss-sass": "^1.0.22",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-sass": "^2.0.7",
+    "gatsby-remark-autolink-headers": "^2.1.4",
+    "gatsby-source-filesystem": "^2.1.10",
+    "gatsby-transformer-json": "^2.1.7",
+    "gatsby-transformer-remark": "^2.6.15",
+    "gh-pages": "^2.0.1",
+    "husky": "^1.3.1",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "shx": "^0.3.2",
+    "svg-sprite-loader": "^4.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrototypeInteractive/gatsby-react-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PrototypeInteractive/gatsby-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/PrototypeInteractive/gatsby-react-boilerplate#readme"
+}
