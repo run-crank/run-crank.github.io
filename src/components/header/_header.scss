@@ -42,5 +42,8 @@
   background: #fff;
   a {
     color: $primary;
+    svg {
+      fill: $primary;
+    }
   }
 }
