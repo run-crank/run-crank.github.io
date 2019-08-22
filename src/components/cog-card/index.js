@@ -1,4 +1,8 @@
 import React from 'react';
+import Prism from 'prismjs';
+
+import 'prismjs/components/prism-bash';
+import 'prismjs/components/prism-shell-session';
 
 import './_cog-card.scss';
 
