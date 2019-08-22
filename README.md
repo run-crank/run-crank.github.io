@@ -1,4 +1,8 @@
-# Gatsby React Boilerplate
+# crank.run
+
+Based on the Gatsby React Boilerplate starter...
+
+[![CircleCI](https://circleci.com/gh/run-crank/run-crank.github.io/tree/source.svg?style=svg)](https://circleci.com/gh/run-crank/run-crank.github.io/tree/source)
 
 ### Requirements
 
