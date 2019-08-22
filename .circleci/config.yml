@@ -20,5 +20,10 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: Configure Git
+          command: |
+            git config --global user.email "noreply@automatoninc.com"
+            git config --global user.name "CircleCI Deployment"
+      - run:
           name: GitHub Pages Deploy
           command: npm run gh-pages
