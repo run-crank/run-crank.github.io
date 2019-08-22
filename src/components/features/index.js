@@ -7,7 +7,7 @@ const Features = () => (
     <StaticQuery
         query={ graphql`
         query FeaturesQuery {
-          allDataJson {
+          allDataJson(filter: {features: {elemMatch: {title: {regex: "/.*/"}}}}) {
             edges {
               node {
                 features {
