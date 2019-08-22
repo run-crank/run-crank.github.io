@@ -1,4 +1,5 @@
 const path = require(`path`)
+const webpack = require('webpack');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -38,3 +39,34 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 }
+
+/**
+ * Required to successfully `gatsby build`, since we're importing bootstrap,
+ * jQuery, and popper.js dependencines in `src/components/header/index.js`.
+ */
+exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
+  const config = {
+    plugins: [
+      new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+      }),
+    ],
+  };
+  if (stage === 'build-html') {
+    config.module = {
+      rules: [
+        {
+          test: require.resolve('bootstrap'),
+          use: loaders.null(),
+        },
+        {
+          test: require.resolve('jquery'),
+          use: loaders.null(),
+        },
+      ],
+    };
+  }
+  actions.setWebpackConfig(config);
+};
