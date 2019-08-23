@@ -5,6 +5,11 @@
     "img": "/img/cogs/web.png",
     "homepage": "https://github.com/run-crank/cog-web"
   }, {
+    "label": "Eloqua",
+    "name": "automatoninc/eloqua",
+    "img": "/img/cogs/eloqua.png",
+    "homepage": "https://github.com/run-crank/cog-eloqua"
+  }, {
     "label": "Marketo",
     "name": "automatoninc/marketo",
     "img": "/img/cogs/marketo.png",
