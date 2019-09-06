@@ -21,7 +21,7 @@ const Header = ({ invertColors, activeTrail }) => (
         <div className="container">
         <nav className="navbar navbar-expand-md navbar-light">
             <span className="header-logo">
-                <Link to="/">[Wide Logo Here]</Link>
+                <Link to="/"><img src="/img/crank-horizontal-white.png" /></Link>
             </span>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
