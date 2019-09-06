@@ -1,5 +1,10 @@
 .homepage-hero {
-  margin: 150px auto;
+  margin: 100px auto;
+
+  .logo {
+    max-width: 400px;
+    margin-bottom: 2em;
+  }
 
   .lead {
     margin-bottom: 1em;

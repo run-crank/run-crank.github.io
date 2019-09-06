@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const HomepageHero = () => (
     <div className="homepage-hero jumbotron jumbotron-fluid text-center">
         <div className="container">
-            <h1 className="display-4">[Square Logo Here]</h1>
+            <img src="/img/crank-logo.png" className="logo" alt="Crank Logo" />
             <h3 className="lead">BDD Test Automation for Integrated SaaS</h3>
             <Link to="/intro" className="btn btn-secondary" role="button">Get Started</Link>
             <Link to="/intro/install" className="btn btn-outline-secondary" role="button">Install</Link>
