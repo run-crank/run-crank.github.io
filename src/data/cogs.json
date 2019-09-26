@@ -15,6 +15,11 @@
     "img": "/img/cogs/eloqua.png",
     "homepage": "https://github.com/run-crank/cog-eloqua"
   }, {
+    "label": "Hubspot",
+    "name": "automatoninc/hubspot",
+    "img": "/img/cogs/hubspot.png",
+    "homepage": "https://github.com/run-crank/cog-hubspot"
+  }, {
     "label": "Marketo",
     "name": "automatoninc/marketo",
     "img": "/img/cogs/marketo.png",
