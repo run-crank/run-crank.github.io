@@ -16,8 +16,9 @@ const TemplateWrapper = ({ children, activeTrail, subTitle, invertHeaderColors }
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                
-                  gtag('config', 'UA-75228722-5');
+                  // Initial config/pageview call performed in gatsby-browser.js
+                  // onRouteUpdate() implementation. Works on built version, but
+                  // not in dev.
             `}</script>
         </Helmet>
         <Header invertColors={invertHeaderColors} activeTrail={activeTrail} />
