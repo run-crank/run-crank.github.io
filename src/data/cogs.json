@@ -15,6 +15,11 @@
     "img": "/img/cogs/dns.png",
     "homepage": "https://github.com/run-crank/cog-dns"
   }, {
+    "label": "Dynamics CRM",
+    "name": "automatoninc/dynamics",
+    "img": "/img/cogs/dynamics.png",
+    "homepage": "https://github.com/run-crank/cog-dynamics"
+  }, {
     "label": "Eloqua",
     "name": "automatoninc/eloqua",
     "img": "/img/cogs/eloqua.png",
@@ -34,5 +39,10 @@
     "name": "automatoninc/salesforce",
     "img": "/img/cogs/salesforce.png",
     "homepage": "https://github.com/run-crank/cog-marketo"
+  }, {
+    "label": "SalesLoft",
+    "name": "automatoninc/salesloft",
+    "img": "/img/cogs/salesloft.png",
+    "homepage": "https://github.com/run-crank/cog-salesloft"
   }]
 }
