@@ -47,6 +47,16 @@ them or trust them in your system preferences / security & privacy settings.
 
 ---
 
+## Visual Studio Code
+
+For the best Scenario authoring experience, we highly recommend using
+[Visual Studio Code][vscode] and installing the
+[Crank Scenario Language extension][vscode-extension].
+
+<a target="_blank" class="btn btn-secondary" role="button" href="https://marketplace.visualstudio.com/items?itemName=run-crank.crank-scenario-language">Get the Extension</a>
+
+---
+
 ## Updating Crank
 
 ```shell-session
@@ -94,3 +104,5 @@ If this is unsuccessful, manually delete `%LOCALAPPDATA%\crank` along with the d
 [64-bit-exe-latest]: https://get.crank.run/crank-x64.exe
 [32-bit-exe-latest]: https://get.crank.run/crank-x86.exe
 [macos-pkg-latest]: https://get.crank.run/crank.pkg
+[vscode]: https://code.visualstudio.com/download
+[vscode-extension]: https://marketplace.visualstudio.com/items?itemName=run-crank.crank-scenario-language

@@ -72,7 +72,8 @@ Looking for more Cogs?
 A Scenario file is just a `yaml` file adhering to a specific format. If you've
 done BDD before, it should look pretty familiar.
 
-Copy this scenario and save it somewhere on your computer:
+Copy this scenario and save it somewhere on your computer, naming it something
+like `my-first-scenario.crank.yml`:
 
 ```yml
 scenario: Your First Scenario
