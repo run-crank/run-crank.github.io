@@ -9,7 +9,25 @@ This page documents how to author Crank Scenario files.
 
 ---
 
-## Finding Steps
+## Getting Started
+
+Although you can author and run Crank Scenario files in any text editor and
+command line, for the best experience, we recommend [Visual Studio Code][vscode]
+with the [Crank Scenario Language extension][vscode-extension] installed.
+
+Skip to the [VS Code section](#vs-code-extension) to see some of the benefits.
+
+### Installing Cogs
+
+Before you author your scenario, you'll want to install Cogs corresponding to
+the systems you are testing. At a minimum, you'll likely want to install the
+[Web Cog][web-cog] by running:
+
+```shell-session
+crank cog:install automatoninc/web
+```
+
+<a class="btn btn-secondary" role="button" href="/discover-cogs">Discover More Cogs Here</a>
 
 Once you've installed some Cogs, you can get a list of all available steps on
 your machine by running the following:
@@ -24,7 +42,9 @@ Run `crank registry:steps --help` for more information.
 
 ## Basic Structure
 
-All Scenarios must include these three properties:
+Scenarios are just yaml files that are named a certain way and conform to a
+specificiation. All Scenario file names should end with `.crank.yml` and must
+include these three properties:
 
 - **scenario**: A string naming the scenario. This is printed out at the top of
   test runs for your convenience.
@@ -191,3 +211,29 @@ the following command:
 ```shell-session
 $ crank registry:steps --columns="cog,id,expected fields"
 ```
+
+---
+
+## VS Code Extension
+
+The [Crank Scenario Language extension][vscode-extension] simplifies the
+Scenario authoring process by embuing the editor with knowledge of...
+
+- **a)** The scenario format (e.g. available and required yaml keys),
+- **b)** Deep knowledge of the Cogs installed on the current system.
+
+This knowledge is used to power IntelliSense features like...
+
+#### Auto-completion of steps
+![Step Auto-Complete](/img/intro/step-intellisense.gif)
+
+#### Auto-completion of step data attributes
+![Data Auto-Complete](/img/intro/data-intellisense.gif)
+
+#### Contextual links for running scenarios
+![Run Scenario](/img/intro/run-scenario.gif)
+
+
+[vscode]: https://code.visualstudio.com/download
+[vscode-extension]: https://marketplace.visualstudio.com/items?itemName=run-crank.crank-scenario-language
+[web-cog]: https://github.com/run-crank/cog-web
