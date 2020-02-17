@@ -30,6 +30,11 @@
     "img": "/img/cogs/hubspot.png",
     "homepage": "https://github.com/run-crank/cog-hubspot"
   }, {
+    "label": "Iterable",
+    "name": "automatoninc/iterable",
+    "img": "/img/cogs/iterable.png",
+    "homepage": "https://github.com/run-crank/cog-iterable"
+  }, {
     "label": "Marketo",
     "name": "automatoninc/marketo",
     "img": "/img/cogs/marketo.png",
