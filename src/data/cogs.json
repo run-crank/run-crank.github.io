@@ -40,6 +40,11 @@
     "img": "/img/cogs/marketo.png",
     "homepage": "https://github.com/run-crank/cog-marketo"
   }, {
+    "label": "ON24",
+    "name": "automatoninc/on24",
+    "img": "/img/cogs/on24.png",
+    "homepage": "https://github.com/run-crank/cog-on24"
+  },{
     "label": "Pardot",
     "name": "automatoninc/pardot",
     "img": "/img/cogs/pardot.png",
