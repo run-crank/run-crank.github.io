@@ -174,6 +174,44 @@ for comparison.
 
 ---
 
+## Dynamic Tokens
+
+After each step, Cogs may also expose contextual details dynamically as tokens.
+Use these dynamic tokens in Scenarios that rely on details that could only be
+known at run-time, for instance...
+
+**Test fixtures with run-time interdependencies**
+```yaml
+steps:
+- step: Given I create a Salesforce Account
+  data: {account: {Name: 'Fixture Account'}}
+- step: And I create a Salesforce Contact assigned to the above Account
+  data:
+    contact:
+      Email: 'atommy@example.com'
+      LastName: Tommy
+      # Assign using the dynamic token supplied by the above step.
+      AccountId: '{{salesforce.account.Id}}'
+```
+
+**Assertions using run-time data**
+```yaml
+steps:
+- step: When I navigate to https://example.com
+- step: Then Google Analytics should have tracked a pageview for tracking ID UA-98765-43
+- step: When I click the page element button.cta
+- step: Then Google Analytics should have tracked an event with category cta and action click for tracking ID UA-98765-43
+  data:
+    withParameters:
+      # CD10 should match the GA Client ID supplied by the pageview check.
+      cd10: '{{web.googleAnalyticsRequest.cid}}'
+```
+
+Use the [VS Code Extension](#vs-code-extension) for intellisense and hints that
+expose what dynamic tokens are exposed by each step.
+
+---
+
 ## Config Over BDD
 
 Under the hood, Crank does the work to translate your scenario file's step
@@ -225,14 +263,16 @@ Scenario authoring process by embuing the editor with knowledge of...
 This knowledge is used to power IntelliSense features like...
 
 #### Auto-completion of steps
-![Step Auto-Complete](/img/intro/step-intellisense.gif)
+<img src="/img/intro/step-intellisense.gif" alt="Step Auto-Complete" loading="lazy" /><br />
 
 #### Auto-completion of step data attributes
-![Data Auto-Complete](/img/intro/data-intellisense.gif)
+<img src="/img/intro/data-intellisense.gif" alt="Data Auto-Complete" loading="lazy" /><br />
+
+#### Auto-completion of dynamic tokens
+<img src="/img/intro/dynamic-token-intellisense.gif" alt="Dynamic Auto-Complete" loading="lazy" /><br />
 
 #### Contextual links for running scenarios
-![Run Scenario](/img/intro/run-scenario.gif)
-
+<img src="/img/intro/run-scenario.gif" alt="Run Scenario" loading="lazy" /><br />
 
 [vscode]: https://code.visualstudio.com/download
 [vscode-extension]: https://marketplace.visualstudio.com/items?itemName=run-crank.crank-scenario-language
