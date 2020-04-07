@@ -1,0 +1,3794 @@
+[
+  {
+    "name": "automatoninc/dns",
+    "label": "DNS",
+    "version": "0.1.0",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "ValidateSpfRecordHost",
+        "name": "Check that a domain's SPF record includes a specific host",
+        "help": "",
+        "type": 1,
+        "expression": "/the spf record for (?<domain>.+) should include (?<host>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "domain",
+            "optionality": 1,
+            "type": 1,
+            "description": "Domain name",
+            "help": ""
+          },
+          {
+            "key": "host",
+            "optionality": 1,
+            "type": 1,
+            "description": "Host name",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/dns",
+        "cogLabel": "DNS"
+      },
+      {
+        "stepId": "ValidateSpfRecord",
+        "name": "Check the validity of a domain's SPF record",
+        "help": "",
+        "type": 1,
+        "expression": "/the spf record for (?<domain>.+) should be valid/",
+        "expectedFieldsList": [
+          {
+            "key": "domain",
+            "optionality": 1,
+            "type": 1,
+            "description": "Domain name",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/dns",
+        "cogLabel": "DNS"
+      }
+    ],
+    "authFieldsList": [],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/dynamics",
+    "label": "Dynamics",
+    "version": "0.3.0",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateLead",
+        "name": "Create a Dynamics CRM Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/create a dynamics crm lead/",
+        "expectedFieldsList": [
+          {
+            "key": "lead",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "leadid",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Dynamics ID",
+                "help": ""
+              },
+              {
+                "key": "emailaddress1",
+                "optionality": 0,
+                "type": 6,
+                "description": "Lead's Email Address",
+                "help": ""
+              },
+              {
+                "key": "createdon",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Lead was created",
+                "help": ""
+              },
+              {
+                "key": "modifiedon",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Lead was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/dynamics",
+        "cogLabel": "Dynamics"
+      },
+      {
+        "stepId": "DeleteLead",
+        "name": "Delete a Dynamics CRM Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) dynamics crm lead/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/dynamics",
+        "cogLabel": "Dynamics"
+      },
+      {
+        "stepId": "LeadFieldEquals",
+        "name": "Check a field on a Dynamics CRM Lead",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on dynamics crm lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "leadid",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Dynamics ID",
+                "help": ""
+              },
+              {
+                "key": "emailaddress1",
+                "optionality": 0,
+                "type": 6,
+                "description": "Lead's Email Address",
+                "help": ""
+              },
+              {
+                "key": "createdon",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Lead was created",
+                "help": ""
+              },
+              {
+                "key": "modifiedon",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Lead was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/dynamics",
+        "cogLabel": "Dynamics"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "resource",
+        "optionality": 1,
+        "type": 10,
+        "description": "Resource URL",
+        "help": ""
+      },
+      {
+        "key": "clientId",
+        "optionality": 1,
+        "type": 1,
+        "description": "Client Id",
+        "help": ""
+      },
+      {
+        "key": "clientSecret",
+        "optionality": 1,
+        "type": 1,
+        "description": "Client Secret",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/eloqua",
+    "label": "Eloqua",
+    "version": "0.2.1",
+    "homepage": "https://github.com/run-crank/cog-eloqua",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateContact",
+        "name": "Create an Eloqua contact",
+        "help": "",
+        "type": 0,
+        "expression": "/create an eloqua contact/",
+        "expectedFieldsList": [
+          {
+            "key": "contact",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/eloqua",
+        "cogLabel": "Eloqua"
+      },
+      {
+        "stepId": "DeleteContact",
+        "name": "Delete an Eloqua contact",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) eloqua contact/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/eloqua",
+        "cogLabel": "Eloqua"
+      },
+      {
+        "stepId": "ContactFieldEquals",
+        "name": "Check a field on an Eloqua contact",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>.+) field on eloqua contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/eloqua",
+        "cogLabel": "Eloqua"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "companyName",
+        "optionality": 1,
+        "type": 1,
+        "description": "Company Name",
+        "help": ""
+      },
+      {
+        "key": "username",
+        "optionality": 1,
+        "type": 1,
+        "description": "Username",
+        "help": ""
+      },
+      {
+        "key": "password",
+        "optionality": 1,
+        "type": 1,
+        "description": "Password",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": "https://github.com/run-crank/cog-eloqua#authentication"
+  },
+  {
+    "name": "automatoninc/hubspot",
+    "label": "HubSpot",
+    "version": "0.4.0",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateOrUpdateContactStep",
+        "name": "Create or update a HubSpot contact",
+        "help": "",
+        "type": 0,
+        "expression": "/create or update a hubspot contact/",
+        "expectedFieldsList": [
+          {
+            "key": "contact",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "hs_object_id",
+                "optionality": 0,
+                "type": 1,
+                "description": "The contact's ID",
+                "help": ""
+              },
+              {
+                "key": "createdate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Create Date",
+                "help": ""
+              },
+              {
+                "key": "lastmodifieddate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/hubspot",
+        "cogLabel": "HubSpot"
+      },
+      {
+        "stepId": "DeleteContactStep",
+        "name": "Delete a HubSpot contact",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) hubspot contact/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "hs_object_id",
+                "optionality": 0,
+                "type": 1,
+                "description": "The contact's ID",
+                "help": ""
+              },
+              {
+                "key": "createdate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Create Date",
+                "help": ""
+              },
+              {
+                "key": "lastmodifieddate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/hubspot",
+        "cogLabel": "HubSpot"
+      },
+      {
+        "stepId": "EnrollContactToWorkflowStep",
+        "name": "Enroll a HubSpot Contact into a Workflow",
+        "help": "",
+        "type": 0,
+        "expression": "/enroll the (?<email>.+) hubspot contact into workflow (?<workflow>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "workflow",
+            "optionality": 1,
+            "type": 0,
+            "description": "Workflow's Name or ID",
+            "help": ""
+          },
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "workflow",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "The Workflow's ID",
+                "help": ""
+              },
+              {
+                "key": "name",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Name",
+                "help": ""
+              },
+              {
+                "key": "type",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Type",
+                "help": ""
+              },
+              {
+                "key": "description",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Description",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "matchedWorkflows",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "name",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Name",
+                "help": ""
+              },
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "The Workflow's ID",
+                "help": ""
+              },
+              {
+                "key": "type",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Type",
+                "help": ""
+              },
+              {
+                "key": "description",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Description",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/hubspot",
+        "cogLabel": "HubSpot"
+      },
+      {
+        "stepId": "ContactFieldEquals",
+        "name": "Check a field on a HubSpot Contact",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on hubspot contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "hs_object_id",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Contact's ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "The Contact's Email",
+                "help": ""
+              },
+              {
+                "key": "createdate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Create Date",
+                "help": ""
+              },
+              {
+                "key": "lastmodifieddate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/hubspot",
+        "cogLabel": "HubSpot"
+      },
+      {
+        "stepId": "ContactEnrolledToWorkflowStep",
+        "name": "Check Current Workflow Enrollment of a HubSpot Contact",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<email>.+) hubspot contact should currently be enrolled in workflow (?<workflow>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "workflow",
+            "optionality": 1,
+            "type": 0,
+            "description": "Workflow's Name or ID",
+            "help": ""
+          },
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Contact's ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "The Contact's Email",
+                "help": ""
+              },
+              {
+                "key": "createdate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Create Date",
+                "help": ""
+              },
+              {
+                "key": "lastmodifieddate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The Contact's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "workflow",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "name",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Name",
+                "help": ""
+              },
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "The Workflow's ID",
+                "help": ""
+              },
+              {
+                "key": "type",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Type",
+                "help": ""
+              },
+              {
+                "key": "description",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Description",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "matchedWorkflows",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "name",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Name",
+                "help": ""
+              },
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "The Workflow's ID",
+                "help": ""
+              },
+              {
+                "key": "type",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Type",
+                "help": ""
+              },
+              {
+                "key": "description",
+                "optionality": 0,
+                "type": 1,
+                "description": "The Workflow's Description",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/hubspot",
+        "cogLabel": "HubSpot"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "apiKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "API Key",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/inbox-mailgun",
+    "label": "Inbox (Mailgun)",
+    "version": "0.3.2",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "EmailLinksValidationStep",
+        "name": "Check that no link in an email is broken",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<position>\\d+)(?:(st|nd|rd|th))? mailgun email for (?<email>.+) should not contain broken links/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "The inbox's email address",
+            "help": ""
+          },
+          {
+            "key": "position",
+            "optionality": 1,
+            "type": 3,
+            "description": "The nth message to check from the email's inbox",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "eml",
+            "type": 2,
+            "guaranteedFieldsList": [],
+            "mayHaveMoreFields": false
+          },
+          {
+            "id": "messages",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "#",
+                "optionality": 0,
+                "type": 3,
+                "description": "Email receipt order number",
+                "help": ""
+              },
+              {
+                "key": "Subject",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email subject line",
+                "help": ""
+              },
+              {
+                "key": "From",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email from line",
+                "help": ""
+              },
+              {
+                "key": "To",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email to line",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          },
+          {
+            "id": "links",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "Type",
+                "optionality": 0,
+                "type": 1,
+                "description": "Link Found In (e.g. HTML or Plain-Text)",
+                "help": ""
+              },
+              {
+                "key": "Url",
+                "optionality": 0,
+                "type": 10,
+                "description": "Link URL",
+                "help": ""
+              },
+              {
+                "key": "StatusCode",
+                "optionality": 0,
+                "type": 3,
+                "description": "HTTP Status code when the link was checked (e.g. 404 or 200)",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/inbox-mailgun",
+        "cogLabel": "Inbox (Mailgun)"
+      },
+      {
+        "stepId": "EmailFieldValidationStep",
+        "name": "Check the content of an email",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>(subject|body-html|body-plain|from)) of the (?<position>\\d+)(?:(st|nd|rd|th))? mailgun email for (?<email>[^\\s]+) (?<operator>(should contain|should not contain|should be)) (?<expectation>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "The inbox's email address",
+            "help": ""
+          },
+          {
+            "key": "position",
+            "optionality": 1,
+            "type": 3,
+            "description": "The nth message to check from the email's inbox",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "The operator to use when performing the validation. Current supported values are: should contain, should not contain, and should be",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "eml",
+            "type": 2,
+            "guaranteedFieldsList": [],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/inbox-mailgun",
+        "cogLabel": "Inbox (Mailgun)"
+      },
+      {
+        "stepId": "EmailCountEqualsStep",
+        "name": "Check the number of emails received",
+        "help": "",
+        "type": 1,
+        "expression": "/there should be (?<count>\\d+) emails? in mailgun for (?<email>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "The inbox's email address",
+            "help": ""
+          },
+          {
+            "key": "count",
+            "optionality": 1,
+            "type": 3,
+            "description": "The number received",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "messages",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "#",
+                "optionality": 0,
+                "type": 3,
+                "description": "Email receipt order number",
+                "help": ""
+              },
+              {
+                "key": "Subject",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email subject line",
+                "help": ""
+              },
+              {
+                "key": "From",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email from line",
+                "help": ""
+              },
+              {
+                "key": "To",
+                "optionality": 0,
+                "type": 1,
+                "description": "Email to line",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/inbox-mailgun",
+        "cogLabel": "Inbox (Mailgun)"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "apiKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "Mailgun API Key",
+        "help": ""
+      },
+      {
+        "key": "domain",
+        "optionality": 1,
+        "type": 1,
+        "description": "Email Domain",
+        "help": ""
+      },
+      {
+        "key": "endpoint",
+        "optionality": 1,
+        "type": 1,
+        "description": "Mailgun API Endpoint",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/iterable",
+    "label": "Iterable",
+    "version": "0.2.0",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateOrUpdateContact",
+        "name": "Create or update an Iterable Contact",
+        "help": "",
+        "type": 0,
+        "expression": "/create or update an iterable contact/",
+        "expectedFieldsList": [
+          {
+            "key": "contact",
+            "optionality": 1,
+            "type": 9,
+            "description": "Where keys represent contact profile field names as represented in the Iterable API (including email).",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Contact's Email Address",
+                "help": ""
+              },
+              {
+                "key": "signupDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Contact was created",
+                "help": ""
+              },
+              {
+                "key": "profileUpdatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Contact was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/iterable",
+        "cogLabel": "Iterable"
+      },
+      {
+        "stepId": "DeleteContact",
+        "name": "Delete an Iterable Contact",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) iterable contact/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/iterable",
+        "cogLabel": "Iterable"
+      },
+      {
+        "stepId": "ContactFieldEquals",
+        "name": "Check a field on an Iterable Contact",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_ ]+) field on iterable contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (one of be less than, be greater than, be, contain, not be, or not contain)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Contact's Email Address",
+                "help": ""
+              },
+              {
+                "key": "signupDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Contact was created",
+                "help": ""
+              },
+              {
+                "key": "profileUpdatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Contact was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/iterable",
+        "cogLabel": "Iterable"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "apiKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "Api Key",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/marketo",
+    "label": "Marketo",
+    "version": "0.5.1",
+    "homepage": "https://github.com/run-crank/cog-marketo",
+    "stepDefinitionsList": [
+      {
+        "stepId": "AddLeadToSmartCampaignStep",
+        "name": "Add Marketo Lead to Smart Campaign",
+        "help": "",
+        "type": 0,
+        "expression": "/add the (?<email>.+) marketo lead to smart campaign (?<campaign>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "campaign",
+            "optionality": 1,
+            "type": 0,
+            "description": "Smart campaign name or numeric id",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Lead's Email",
+                "help": ""
+              },
+              {
+                "key": "createdAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Create Date",
+                "help": ""
+              },
+              {
+                "key": "updatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Update Date",
+                "help": ""
+              },
+              {
+                "key": "firstName",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's First Name",
+                "help": ""
+              },
+              {
+                "key": "lastName",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's Last Name",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "campaign",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Campaign's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "name",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign's Email",
+                "help": ""
+              },
+              {
+                "key": "description",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign's Description",
+                "help": ""
+              },
+              {
+                "key": "type",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign's Type",
+                "help": ""
+              },
+              {
+                "key": "updatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign's Update Date",
+                "help": ""
+              },
+              {
+                "key": "createdAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign's Update Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "CreateOrUpdateCustomObjectStep",
+        "name": "Create or Update a Marketo Custom Object",
+        "help": "",
+        "type": 0,
+        "expression": "/create or update an? (?<name>.+) marketo custom object linked to lead (?<linkValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "name",
+            "optionality": 1,
+            "type": 1,
+            "description": "Custom Object's API name",
+            "help": ""
+          },
+          {
+            "key": "linkValue",
+            "optionality": 1,
+            "type": 6,
+            "description": "Linked Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "customObject",
+            "optionality": 1,
+            "type": 9,
+            "description": "Map of custom object data whose keys are field names.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "customObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "marketoGUID",
+                "optionality": 0,
+                "type": 1,
+                "description": "Custom Object's Marketo GUID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "CreateOrUpdateLeadByFieldStep",
+        "name": "Create or update a Marketo Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/create or update a marketo lead/",
+        "expectedFieldsList": [
+          {
+            "key": "lead",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "DeleteCustomObjectStep",
+        "name": "Delete a Marketo Custom Object",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<name>.+) marketo custom object linked to lead (?<linkValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "name",
+            "optionality": 1,
+            "type": 1,
+            "description": "Custom Object's API name",
+            "help": ""
+          },
+          {
+            "key": "linkValue",
+            "optionality": 1,
+            "type": 6,
+            "description": "Linked Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "dedupeFields",
+            "optionality": 0,
+            "type": 9,
+            "description": "Map of custom dedupeFields data whose keys are field names.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "customObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "marketoGUID",
+                "optionality": 0,
+                "type": 1,
+                "description": "Custom Object's Marketo GUID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "DeleteLeadStep",
+        "name": "Delete a Marketo Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) marketo lead/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "CustomObjectFieldEqualsStep",
+        "name": "Check a field on a Marketo Custom Object",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on the (?<name>.+) marketo custom object linked to lead (?<linkValue>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "name",
+            "optionality": 1,
+            "type": 1,
+            "description": "Custom Object's API name",
+            "help": ""
+          },
+          {
+            "key": "linkValue",
+            "optionality": 1,
+            "type": 6,
+            "description": "Linked Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "The expected value of the field",
+            "help": ""
+          },
+          {
+            "key": "dedupeFields",
+            "optionality": 0,
+            "type": 9,
+            "description": "Map of custom dedupeFields data whose keys are field names.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "customObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "marketoGUID",
+                "optionality": 0,
+                "type": 1,
+                "description": "Custom Object's Marketo GUID",
+                "help": ""
+              },
+              {
+                "key": "createdAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Custom Object's create date",
+                "help": ""
+              },
+              {
+                "key": "updatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Custom Object's last update date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "LeadFieldEqualsStep",
+        "name": "Check a field on a Marketo Lead",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on marketo lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Lead's Email",
+                "help": ""
+              },
+              {
+                "key": "createdAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Create Date",
+                "help": ""
+              },
+              {
+                "key": "updatedAt",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Update Date",
+                "help": ""
+              },
+              {
+                "key": "firstName",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's First Name",
+                "help": ""
+              },
+              {
+                "key": "lastName",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's Last Name",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      },
+      {
+        "stepId": "CheckLeadActivityStep",
+        "name": "Check a Marketo Lead's Activity",
+        "help": "",
+        "type": 1,
+        "expression": "/there should be an? (?<activityTypeIdOrName>.+) activity for marketo lead (?<email>.+) in the last (?<minutes>\\d+) minutes?/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "The email address of the Marketo Lead",
+            "help": ""
+          },
+          {
+            "key": "activityTypeIdOrName",
+            "optionality": 1,
+            "type": 0,
+            "description": "The activity type ID (number) or name",
+            "help": ""
+          },
+          {
+            "key": "minutes",
+            "optionality": 1,
+            "type": 3,
+            "description": "The number of minutes prior to now to use when filtering the activity feed",
+            "help": ""
+          },
+          {
+            "key": "withAttributes",
+            "optionality": 0,
+            "type": 9,
+            "description": "Represents additional parameters that should be used to validate an activity. The key in the object represents an attribute name and the value represents the expected value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "matchedActivities",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Activity's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "leadId",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "activityDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Activity's Date",
+                "help": ""
+              },
+              {
+                "key": "activityTypeId",
+                "optionality": 0,
+                "type": 3,
+                "description": "Activity Type's ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "activity",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Activity's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "leadId",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's Marketo ID",
+                "help": ""
+              },
+              {
+                "key": "activityDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Activity's Date",
+                "help": ""
+              },
+              {
+                "key": "activityTypeId",
+                "optionality": 0,
+                "type": 3,
+                "description": "Activity Type's ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/marketo",
+        "cogLabel": "Marketo"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "endpoint",
+        "optionality": 1,
+        "type": 10,
+        "description": "REST API endpoint (without /rest), e.g. https://123-abc-456.mktorest.com",
+        "help": ""
+      },
+      {
+        "key": "clientId",
+        "optionality": 1,
+        "type": 1,
+        "description": "Client ID",
+        "help": ""
+      },
+      {
+        "key": "clientSecret",
+        "optionality": 1,
+        "type": 1,
+        "description": "Client Secret",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": "https://docs.marketo.com/display/public/DOCS/Create+a+Custom+Service+for+Use+with+ReST+API"
+  },
+  {
+    "name": "automatoninc/on24",
+    "label": "ON24",
+    "version": "0.1.1",
+    "homepage": "",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateRegistrant",
+        "name": "Create an ON24 registrant",
+        "help": "This step attempts to create a registrant for the given event ID.",
+        "type": 0,
+        "expression": "/create an ON24 registrant for event (?<eventId>\\d+)/",
+        "expectedFieldsList": [
+          {
+            "key": "eventId",
+            "optionality": 1,
+            "type": 3,
+            "description": "Event ID",
+            "help": "This ID is used to identify the ON24 event. Event IDs can be found in your ON24 event dashboard."
+          },
+          {
+            "key": "registrant",
+            "optionality": 1,
+            "type": 9,
+            "description": "A Map of registrant fields and their values.",
+            "help": "All required fields for this event must be included, or else the step will result in an error."
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "registrant",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "eventuserid",
+                "optionality": 0,
+                "type": 3,
+                "description": "Event User ID",
+                "help": ""
+              },
+              {
+                "key": "createtimestamp",
+                "optionality": 0,
+                "type": 5,
+                "description": "Registrant create date/time.",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Registrant's e-mail address",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/on24",
+        "cogLabel": "ON24"
+      },
+      {
+        "stepId": "ForgetRegistrant",
+        "name": "Forget an ON24 registrant",
+        "help": "This step attempts to \"forget\" (or delete) a registrant for the given event ID.",
+        "type": 0,
+        "expression": "/forget that (?<email>.+) registered for ON24 event (?<eventId>\\d+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Registrant's email address",
+            "help": "This email address is used to identify the ON24 registrant who should be forgotten / deleted."
+          },
+          {
+            "key": "eventId",
+            "optionality": 1,
+            "type": 3,
+            "description": "Event ID",
+            "help": "This ID is used to identify the ON24 event that this registrant should be removed from."
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "registrant",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "eventuserid",
+                "optionality": 0,
+                "type": 3,
+                "description": "Event User ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Registrant's e-mail address",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/on24",
+        "cogLabel": "ON24"
+      },
+      {
+        "stepId": "CheckRegistrantField",
+        "name": "Check a field on an ON24 registrant",
+        "help": "This step attempts to find an event registrant for the given event ID and email, then checks the value of a specified registrant field.",
+        "type": 1,
+        "expression": "/the (?<field>.+) field on ON24 registrant (?<email>.+) for event (?<eventId>\\d+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Registrant's email address",
+            "help": "This email address is used to find the ON24 registrant."
+          },
+          {
+            "key": "eventId",
+            "optionality": 1,
+            "type": 3,
+            "description": "Event ID",
+            "help": "This ID is used to find the ON24 registrant. Event IDs can be found in your ON24 event dashboard."
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "registrant",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "eventuserid",
+                "optionality": 0,
+                "type": 3,
+                "description": "Event User ID",
+                "help": ""
+              },
+              {
+                "key": "createtimestamp",
+                "optionality": 0,
+                "type": 5,
+                "description": "Registrant create date/time.",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Registrant's e-mail address",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/on24",
+        "cogLabel": "ON24"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "clientId",
+        "optionality": 1,
+        "type": 3,
+        "description": "Client ID",
+        "help": "This is the numeric Client ID, found on your API Dashboard when creating the token."
+      },
+      {
+        "key": "tokenKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "Token Key",
+        "help": "This alphanumeric string can be found on the API Dashboard."
+      },
+      {
+        "key": "tokenSecret",
+        "optionality": 1,
+        "type": 1,
+        "description": "Token Secret",
+        "help": "This alphanumeric string can be found on the API Dashboard."
+      }
+    ],
+    "authHelpUrl": ""
+  },
+  {
+    "name": "automatoninc/pardot",
+    "label": "Pardot",
+    "version": "0.3.0",
+    "homepage": "https://github.com/run-crank/cog-pardot",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateProspect",
+        "name": "Create a Pardot Prospect",
+        "help": "",
+        "type": 0,
+        "expression": "/create a pardot prospect/",
+        "expectedFieldsList": [
+          {
+            "key": "prospect",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "prospect",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Prospect's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Prospect's Email Address",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was created",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/pardot",
+        "cogLabel": "Pardot"
+      },
+      {
+        "stepId": "DeleteProspect",
+        "name": "Delete a Pardot Prospect",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) pardot prospect/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/pardot",
+        "cogLabel": "Pardot"
+      },
+      {
+        "stepId": "ProspectFieldEquals",
+        "name": "Check a field on a Pardot Prospect",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on pardot prospect (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Prospect's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "prospect",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Prospect's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Prospect's Email Address",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was created",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/pardot",
+        "cogLabel": "Pardot"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "email",
+        "optionality": 1,
+        "type": 6,
+        "description": "Email address",
+        "help": "This is your (or an API user's) email address. This user must be a Pardot-only user (no SSO or Salesforce User sync users may be used)."
+      },
+      {
+        "key": "password",
+        "optionality": 1,
+        "type": 1,
+        "description": "Password",
+        "help": ""
+      },
+      {
+        "key": "userKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "User key",
+        "help": "You can find your API User Key about halfway down the page on the \"My Profile\" tab of your settings: https://pi.pardot.com/account/user"
+      }
+    ],
+    "authHelpUrl": "https://github.com/run-crank/cog-pardot#authentication"
+  },
+  {
+    "name": "automatoninc/salesforce",
+    "label": "Salesforce",
+    "version": "0.5.0",
+    "homepage": "https://github.com/run-crank/cog-salesforce",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateAccount",
+        "name": "Create a Salesforce Account",
+        "help": "",
+        "type": 0,
+        "expression": "/create a salesforce account/",
+        "expectedFieldsList": [
+          {
+            "key": "account",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "account",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Account's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "ContactCreateStep",
+        "name": "Create a Salesforce Contact",
+        "help": "",
+        "type": 0,
+        "expression": "/create a salesforce contact/",
+        "expectedFieldsList": [
+          {
+            "key": "contact",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Contact's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "CreateLead",
+        "name": "Create a Salesforce Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/create a salesforce lead/",
+        "expectedFieldsList": [
+          {
+            "key": "lead",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "CreateOpportunity",
+        "name": "Create a Salesforce Opportunity",
+        "help": "",
+        "type": 0,
+        "expression": "/create a salesforce opportunity/",
+        "expectedFieldsList": [
+          {
+            "key": "opportunity",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "opportunity",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Opportunity's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "DeleteAccount",
+        "name": "Delete a Salesforce Account",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the salesforce account with (?<field>[a-zA-Z0-9_]+) (?<identifier>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "the name of the field used to identify the account",
+            "help": ""
+          },
+          {
+            "key": "identifier",
+            "optionality": 1,
+            "type": 0,
+            "description": "the value of the field",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "account",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Account's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "ContactDeleteStep",
+        "name": "Delete a Salesforce Contact",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) salesforce contact/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's Email Address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Contact's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "DeleteLead",
+        "name": "Delete a Salesforce Lead",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) salesforce lead/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Lead's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "DeleteOpportunity",
+        "name": "Delete a Salesforce Opportunity",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the salesforce opportunity with (?<field>[a-zA-Z0-9_]+) (?<identifier>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "the name of the field used to identify the opportunity",
+            "help": ""
+          },
+          {
+            "key": "identifier",
+            "optionality": 1,
+            "type": 0,
+            "description": "the value of the field",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "opportunity",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Opportunity's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "AccountFieldEquals",
+        "name": "Check a field on a Salesforce Account",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce account with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "idField",
+            "optionality": 1,
+            "type": 1,
+            "description": "The field used to search/identify the account",
+            "help": ""
+          },
+          {
+            "key": "identifier",
+            "optionality": 1,
+            "type": 0,
+            "description": "The value of the id field to use when searching",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "The name of the field to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "The expected value of the field",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "account",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Account's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Account's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Account's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          },
+          {
+            "id": "matchedAccounts",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Account's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Account's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Account's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "CampaignMemberFieldEquals",
+        "name": "Check a field on a Salesforce Campaign Member",
+        "help": "",
+        "type": 1,
+        "expression": "/the salesforce lead (?<email>.+) should have campaign member (?<field>[a-z0-9_]+) (?<operator>set to|not set to|containing|not containing|less than|greater than) (?<expectedValue>.+) on campaign (?<campaignId>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "campaignId",
+            "optionality": 1,
+            "type": 1,
+            "description": "Campaign ID",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (set to, not set to, containing, not containing, greater than, or less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "campaignMember",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign Member's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign Member's Last Modified Date",
+                "help": ""
+              },
+              {
+                "key": "CampaignId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Campaign Id",
+                "help": ""
+              },
+              {
+                "key": "LeadId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Lead Id",
+                "help": ""
+              },
+              {
+                "key": "ContactId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Contact Id",
+                "help": ""
+              },
+              {
+                "key": "LeadOrContactId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Lead or Contact Id",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "ContactFieldEqualsStep",
+        "name": "Check a field on a Salesforce Contact",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Contact's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "contact",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Contact's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Contact's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Contact's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "LeadFieldEquals",
+        "name": "Check a field on a Salesforce Lead",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "lead",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Lead's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Lead's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "OpportunityFieldEquals",
+        "name": "Check a field on a Salesforce Opportunity",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce opportunity with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "idField",
+            "optionality": 1,
+            "type": 1,
+            "description": "The field used to search/identify the opportunity",
+            "help": ""
+          },
+          {
+            "key": "identifier",
+            "optionality": 1,
+            "type": 0,
+            "description": "The value of the id field to use when searching",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "The name of the field to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "The expected value of the field",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "opportunity",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Opportunity's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Opportunity's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Opportunity's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          },
+          {
+            "id": "matchedOpportunities",
+            "type": 1,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Opportunity's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Opportunity's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Opportunity's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "CampaignMemberCampaignIdEquals",
+        "name": "Check Salesforce Campaign Membership",
+        "help": "",
+        "type": 1,
+        "expression": "/the salesforce lead (?<email>.+) should be a member of campaign (?<campaignId>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Lead's email address",
+            "help": ""
+          },
+          {
+            "key": "campaignId",
+            "optionality": 1,
+            "type": 1,
+            "description": "Campaign ID",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "campaignMember",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign Member's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Campaign Member's Last Modified Date",
+                "help": ""
+              },
+              {
+                "key": "CampaignId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Campaign Id",
+                "help": ""
+              },
+              {
+                "key": "LeadId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Lead Id",
+                "help": ""
+              },
+              {
+                "key": "ContactId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Contact Id",
+                "help": ""
+              },
+              {
+                "key": "LeadOrContactId",
+                "optionality": 0,
+                "type": 1,
+                "description": "Campaign Member's Lead or Contact Id",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "instanceUrl",
+        "optionality": 1,
+        "type": 10,
+        "description": "Login/instance URL (e.g. https://na1.salesforce.com)",
+        "help": ""
+      },
+      {
+        "key": "clientId",
+        "optionality": 1,
+        "type": 1,
+        "description": "OAuth2 Client ID",
+        "help": ""
+      },
+      {
+        "key": "clientSecret",
+        "optionality": 1,
+        "type": 1,
+        "description": "OAuth2 Client Secret",
+        "help": ""
+      },
+      {
+        "key": "username",
+        "optionality": 1,
+        "type": 1,
+        "description": "Username",
+        "help": ""
+      },
+      {
+        "key": "password",
+        "optionality": 1,
+        "type": 1,
+        "description": "Password",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": "https://help.salesforce.com/articleView?id=connected_app_create.htm&type=5#oauth"
+  },
+  {
+    "name": "automatoninc/salesloft",
+    "label": "Salesloft",
+    "version": "0.3.0",
+    "homepage": "https://github.com/run-crank/cog-salesloft",
+    "stepDefinitionsList": [
+      {
+        "stepId": "CreateOrUpdatePersonStep",
+        "name": "Create or update a SalesLoft person",
+        "help": "",
+        "type": 0,
+        "expression": "/create or update a salesloft person/",
+        "expectedFieldsList": [
+          {
+            "key": "person",
+            "optionality": 1,
+            "type": 9,
+            "description": "A map of field names to field values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "person",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Person's SalesLoft ID",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Created At",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Updated At",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesloft",
+        "cogLabel": "Salesloft"
+      },
+      {
+        "stepId": "DeletePersonStep",
+        "name": "Delete a SalesLoft person",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the (?<email>.+) salesloft person/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Person's email address",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "person",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Person's SalesLoft ID",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Created At",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Updated At",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesloft",
+        "cogLabel": "Salesloft"
+      },
+      {
+        "stepId": "PersonFieldEqualsStep",
+        "name": "Check a field on a SalesLoft Person",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[ a-zA-Z0-9_-]+) field on salesloft person (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "Person's email address",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 0,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "person",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Person's SalesLoft ID",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Created At",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "Person's SalesLoft Updated At",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesloft",
+        "cogLabel": "Salesloft"
+      }
+    ],
+    "authFieldsList": [
+      {
+        "key": "apiKey",
+        "optionality": 1,
+        "type": 1,
+        "description": "API Key",
+        "help": ""
+      }
+    ],
+    "authHelpUrl": "https://developers.salesloft.com/api.html#!/Topic/apikey"
+  },
+  {
+    "name": "automatoninc/web",
+    "label": "A Browser",
+    "version": "0.5.0",
+    "homepage": "https://github.com/run-crank/cog-web",
+    "stepDefinitionsList": [
+      {
+        "stepId": "ClickOnElement",
+        "name": "Click an element on a page",
+        "help": "",
+        "type": 0,
+        "expression": "/click the page element (?<domQuerySelector>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "domQuerySelector",
+            "optionality": 1,
+            "type": 1,
+            "description": "Element's DOM Query Selector",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "EnterValueIntoField",
+        "name": "Fill out a form field",
+        "help": "",
+        "type": 0,
+        "expression": "/fill out (?<domQuerySelector>.+) with (?<value>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "domQuerySelector",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field's DOM Query Selector",
+            "help": ""
+          },
+          {
+            "key": "value",
+            "optionality": 1,
+            "type": 0,
+            "description": "Field Value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "FocusOnFrame",
+        "name": "Focus on Frame",
+        "help": "",
+        "type": 0,
+        "expression": "/focus on the (?<domQuerySelector>.+) frame/",
+        "expectedFieldsList": [
+          {
+            "key": "domQuerySelector",
+            "optionality": 1,
+            "type": 1,
+            "description": "The iframe's DOM query selector, or \"main\" for the main frame",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "NavigateToPage",
+        "name": "Navigate to a webpage",
+        "help": "",
+        "type": 0,
+        "expression": "/navigate to (?<webPageUrl>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "webPageUrl",
+            "optionality": 1,
+            "type": 10,
+            "description": "Page URL",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "ScrollTo",
+        "name": "Scroll to a percentage depth of a web page",
+        "help": "",
+        "type": 0,
+        "expression": "/scroll to (?<depth>\\d+)% of the page/",
+        "expectedFieldsList": [
+          {
+            "key": "depth",
+            "optionality": 1,
+            "type": 3,
+            "description": "Percent Depth",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "SubmitFormByClickingButton",
+        "name": "Submit a form by clicking a button",
+        "help": "",
+        "type": 0,
+        "expression": "/submit the form by clicking (?<domQuerySelector>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "domQuerySelector",
+            "optionality": 1,
+            "type": 1,
+            "description": "Button's DOM Query Selector",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckLighthousePerformance",
+        "name": "Check a page's Lighthouse performance score",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<throttleTo>mobile|desktop) lighthouse performance score should be (?<expectedScore>\\d{1,3}) or higher/",
+        "expectedFieldsList": [
+          {
+            "key": "throttleTo",
+            "optionality": 1,
+            "type": 1,
+            "description": "Throttle Level (mobile or desktop)",
+            "help": ""
+          },
+          {
+            "key": "expectedScore",
+            "optionality": 1,
+            "type": 3,
+            "description": "Expected Score",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "labData",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "actualScore",
+                "optionality": 0,
+                "type": 3,
+                "description": "Performance Score",
+                "help": ""
+              },
+              {
+                "key": "firstContentfulPaint",
+                "optionality": 0,
+                "type": 3,
+                "description": "First Contentful Paint",
+                "help": ""
+              },
+              {
+                "key": "firstMeaningfulPaint",
+                "optionality": 0,
+                "type": 3,
+                "description": "First Meaningful Paint",
+                "help": ""
+              },
+              {
+                "key": "speedIndex",
+                "optionality": 0,
+                "type": 3,
+                "description": "Speed Index",
+                "help": ""
+              },
+              {
+                "key": "firstCpuIdle",
+                "optionality": 0,
+                "type": 3,
+                "description": "First CPU Idle",
+                "help": ""
+              },
+              {
+                "key": "timeToInteractive",
+                "optionality": 0,
+                "type": 3,
+                "description": "Time to Interactive",
+                "help": ""
+              },
+              {
+                "key": "maxPotentialFirstInputDelay",
+                "optionality": 0,
+                "type": 3,
+                "description": "Max Potential First Input Delay",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckCurrentPageInfo",
+        "name": "Check current page info",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>status|text|url) of the current page should (?<operator>contain|not contain|be) (?<expectation>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Page Detail (status, text, or url)",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (contain, not contain, or be)",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected Value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckCurrentPageMetaTag",
+        "name": "Check current page meta tag",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<metaName>.+) meta tag on the current page should (?<operator>be|contain|not contain|not be longer than|exist) ?(?<expectation>.+)?/",
+        "expectedFieldsList": [
+          {
+            "key": "metaName",
+            "optionality": 1,
+            "type": 1,
+            "description": "Meta Tag name",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (be, contain, not contain, not be longer than, exist)",
+            "help": ""
+          },
+          {
+            "key": "expectation",
+            "optionality": 0,
+            "type": 0,
+            "description": "Expected Value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckNetworkRequestStep",
+        "name": "Check for a specific network request",
+        "help": "",
+        "type": 1,
+        "expression": "/there should be (?<reqCount>\\d+) matching network requests? for (?<baseUrl>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "reqCount",
+            "optionality": 1,
+            "type": 3,
+            "description": "# of Requests",
+            "help": ""
+          },
+          {
+            "key": "baseUrl",
+            "optionality": 1,
+            "type": 10,
+            "description": "Base URL Is",
+            "help": ""
+          },
+          {
+            "key": "pathContains",
+            "optionality": 0,
+            "type": 1,
+            "description": "Path Contains",
+            "help": ""
+          },
+          {
+            "key": "withParameters",
+            "optionality": 0,
+            "type": 9,
+            "description": "Parameters Include",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckGoogleFloodlightTag",
+        "name": "Check that a Google Floodlight tag fired",
+        "help": "",
+        "type": 1,
+        "expression": "/a floodlight tag should have fired for advertiser (?<aid>\\d+), group (?<group>[a-zA-Z0-9-_]+), and activity (?<atag>[a-zA-Z0-9-_]+)/",
+        "expectedFieldsList": [
+          {
+            "key": "aid",
+            "optionality": 1,
+            "type": 3,
+            "description": "Advertiser ID",
+            "help": ""
+          },
+          {
+            "key": "group",
+            "optionality": 1,
+            "type": 1,
+            "description": "Group Tag String",
+            "help": ""
+          },
+          {
+            "key": "atag",
+            "optionality": 1,
+            "type": 1,
+            "description": "Activity Tag String",
+            "help": ""
+          },
+          {
+            "key": "cMethod",
+            "optionality": 0,
+            "type": 1,
+            "description": "Counting Method (standard, unique, per session)",
+            "help": ""
+          },
+          {
+            "key": "withVariables",
+            "optionality": 0,
+            "type": 9,
+            "description": "Custom Variables, an optional map of variable names and their expected values",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckGoogleAnalyticsPageView",
+        "name": "Check that Google Analytics tracked a pageview",
+        "help": "",
+        "type": 1,
+        "expression": "/google analytics should have tracked a pageview for tracking id (?<id>[a-zA-Z0-9-]+)/",
+        "expectedFieldsList": [
+          {
+            "key": "id",
+            "optionality": 1,
+            "type": 1,
+            "description": "Tracking / Measurement ID associated with the GA instance/property (e.g. UA-75228722-5)",
+            "help": ""
+          },
+          {
+            "key": "withParameters",
+            "optionality": 0,
+            "type": 9,
+            "description": "Parameter Checks, an optional map of Google Analytics Measurement Protocol Parameters and their expected values.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "googleAnalyticsRequest",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "cid",
+                "optionality": 0,
+                "type": 1,
+                "description": "Google Analytics Client ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckGoogleAnalyticsEvent",
+        "name": "Check that Google Analytics tracked an event",
+        "help": "",
+        "type": 1,
+        "expression": "/google analytics should have tracked an event with category (?<ec>.+) and action (?<ea>.+) for tracking id (?<id>[a-zA-Z0-9-]+)/",
+        "expectedFieldsList": [
+          {
+            "key": "ec",
+            "optionality": 1,
+            "type": 1,
+            "description": "Event Category",
+            "help": ""
+          },
+          {
+            "key": "ea",
+            "optionality": 1,
+            "type": 1,
+            "description": "Event Action",
+            "help": ""
+          },
+          {
+            "key": "id",
+            "optionality": 1,
+            "type": 1,
+            "description": "Tracking / Measurement ID associated with the GA instance/property (e.g. UA-75228722-5)",
+            "help": ""
+          },
+          {
+            "key": "withParameters",
+            "optionality": 0,
+            "type": 9,
+            "description": "Parameter Checks, an optional map of Google Analytics Measurement Protocol Parameters and their expected values.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "googleAnalyticsRequest",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "cid",
+                "optionality": 0,
+                "type": 1,
+                "description": "Google Analytics Client ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckMarketoMunchkin",
+        "name": "Check that Marketo Munchkin tracking loads",
+        "help": "",
+        "type": 1,
+        "expression": "/the tracking code for munchkin account id (?<id>[a-zA-Z0-9-]+) should load/",
+        "expectedFieldsList": [
+          {
+            "key": "id",
+            "optionality": 1,
+            "type": 1,
+            "description": "Munchkin Account ID associated with the user's Marketo instance (e.g. 460-tdh-945)",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckPardotTrackingStep",
+        "name": "Check that Pardot tracking loads",
+        "help": "",
+        "type": 1,
+        "expression": "/the tracking code for pardot account (?<aid>\\d+) and campaign (?<cid>\\d+) should have loaded/",
+        "expectedFieldsList": [
+          {
+            "key": "aid",
+            "optionality": 1,
+            "type": 3,
+            "description": "Pardot Account ID",
+            "help": ""
+          },
+          {
+            "key": "cid",
+            "optionality": 1,
+            "type": 3,
+            "description": "Pardot Campaign ID",
+            "help": ""
+          },
+          {
+            "key": "customDomain",
+            "optionality": 0,
+            "type": 10,
+            "description": "Custom Tracker Domain",
+            "help": ""
+          },
+          {
+            "key": "withParameters",
+            "optionality": 0,
+            "type": 9,
+            "description": "Parameter Checks, an optional map of query parameters and their expected values.",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "pardotTrackingRequest",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "visitor_id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Visitor ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckLinkedInConversionPixelFiredStep",
+        "name": "Check that the LinkedIn Conversion Pixel fired",
+        "help": "",
+        "type": 1,
+        "expression": "/the linkedin conversion pixel for partner id (?<pid>\\d+) should have fired/",
+        "expectedFieldsList": [
+          {
+            "key": "pid",
+            "optionality": 1,
+            "type": 3,
+            "description": "LinkedIn Partner ID",
+            "help": ""
+          },
+          {
+            "key": "cid",
+            "optionality": 1,
+            "type": 3,
+            "description": "LinkedIn Conversion ID",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      },
+      {
+        "stepId": "CheckLinkedInInsightTagFiredStep",
+        "name": "Check that the LinkedIn Insight tag fired",
+        "help": "",
+        "type": 1,
+        "expression": "/the linkedin insight tag for partner id (?<pid>\\d+) should have fired/",
+        "expectedFieldsList": [
+          {
+            "key": "pid",
+            "optionality": 1,
+            "type": 3,
+            "description": "LinkedIn Partner ID",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [],
+        "cog": "automatoninc/web",
+        "cogLabel": "A Browser"
+      }
+    ],
+    "authFieldsList": [],
+    "authHelpUrl": ""
+  }
+]

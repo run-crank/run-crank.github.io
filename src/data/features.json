@@ -1,18 +1,18 @@
 {
   "features": [{
-      "title": "Low-Code / No-Code",
-      "subHead": "SaaS Quality Assurance",
-      "copy": "While most test frameworks make it easy to test your <strong>code</strong>, Crank makes it easy to test where <strong>code you own</strong> interfaces with code you <strong>don't</strong>. Crank is your no-code test suite for end-to-end validation across your tech stack.",
+      "title": "No-Code SaaS QA",
+      "subHead": "Business Technology Quality Assurance",
+      "copy": "While most test frameworks make it easy to test your <strong>code</strong>, Crank makes it easy to test where <strong>code you own</strong> interfaces with code you <strong>don't</strong>.<br /><br />Crank is your no-code test suite for integrated enterprise SaaS technology.",
       "img": "/img/homepage/crank-run.gif"
   }, {
       "title": "Meaningful BDD",
       "subHead": "Easy-to-Read Scenarios",
-      "copy": "If you're running tests that touch SaaS platforms, you're probably collaborating with less-technical business users. Crank uses an easy-to-read test scenario format that developers and business users alike can understand.",
+      "copy": "If you're running tests that touch <strong>business technology</strong>, you're probably collaborating with <strong>business users</strong>. Crank uses an easy-to-read test scenario format that developers and business users alike can understand.",
       "img": "/img/homepage/scenario-yml.png"
   }, {
-      "title": "An Open Ecosystem",
+      "title": "Open Ecosystem",
       "subHead": "Crank is Extensible",
-      "copy": "Crank is just the test runner. It runs actions and assertions that come packaged in docker containers we call Cogs. Can't find the Cog for a system in your environment? Build and contribute your Cog back to the community!",
+      "copy": "Crank is just the test runner. It runs actions and assertions that come packaged in Docker containers we call Cogs. Can't find the Cog for a system in your environment? Build and contribute your Cog back!",
       "img": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSJ3aGl0ZSI+CiAgPHBhdGggZD0iTTAgNCBMMCAyOCBMMzIgMjggTDMyIDQgeiBNNCAyNCBMMTAgMTAgTDE1IDE4IEwxOCAxNCBMMjQgMjR6IE0yNSA3IEE0IDQgMCAwIDEgMjUgMTUgQTQgNCAwIDAgMSAyNSA3Ij48L3BhdGg+Cjwvc3ZnPg=="
   }]
 }
