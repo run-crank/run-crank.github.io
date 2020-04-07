@@ -3,7 +3,6 @@ import { graphql, Link } from "gatsby"
 import Prism from 'prismjs';
 import Icon from '../components/icon';
 import GitHub from '../components/icon/github.icon';
-import * as Slugger from 'github-slugger'
 import Layout from '../components/layout'
 
 import 'prismjs/components/prism-yaml';
@@ -21,7 +20,7 @@ export default class Template extends React.Component {
     this.state.cogs = props.data.cogs;
     this.state.cogExtras = props.pageContext.extras;
 
-    if (window.location.hash && window.location.hash.startsWith('#step:')) {
+    if (typeof window !== `undefined` && window.location.hash && window.location.hash.startsWith('#step:')) {
       this.state.stepFilter = window.location.hash.replace('#step:', '');
     } else {
       this.state.stepFilter = "";
@@ -31,7 +30,7 @@ export default class Template extends React.Component {
   }
 
   componentDidMount() {
-    if (window.location.hash && window.location.hash.startsWith('#step:')) {
+    if (typeof window !== `undefined` && window.location.hash && window.location.hash.startsWith('#step:')) {
       try {
         const elem = document.getElementById('steps');
         elem.scrollIntoView({behavior: 'smooth'});
