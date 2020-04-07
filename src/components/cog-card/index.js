@@ -1,5 +1,6 @@
 import React from 'react';
 import Prism from 'prismjs';
+import { Link } from "gatsby"
 
 import 'prismjs/components/prism-bash';
 import 'prismjs/components/prism-shell-session';
@@ -20,13 +21,12 @@ export default class CogCard extends React.Component {
   render() {
     return (
       <div className="card cog-card">
-        <div className="cog-image" style={{backgroundImage: `url(${this.props.cog.img})`}} />
+        <Link to={`/discover-cogs/${this.props.cog.name}`}>
+          <div className="cog-image" style={{backgroundImage: `url(${this.props.cog.img})`}} />
+        </Link>
         <div className="card-body">
           <h3 className="features-title mt-2 mb-3">{this.props.cog.label}</h3>
-          <pre className="language-shell-session">
-            <code className="language-shell-session">crank cog:install {this.props.cog.name}</code>
-          </pre>
-          <a href={this.props.cog.homepage} className="btn btn-outline-secondary btn-sm mt-2" role="button">More Info</a>
+          <Link to={`/discover-cogs/${this.props.cog.name}`} className="btn btn-outline-secondary btn-sm- mt-2">{this.props.cog.lpLabel || this.props.cog.label} QA Automation</Link>
         </div>
       </div>
     )

@@ -13,6 +13,7 @@ const CogList = () => (
               cogs {
                 img
                 label
+                lpLabel
                 name
                 homepage
               }

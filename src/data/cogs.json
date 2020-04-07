@@ -1,63 +1,115 @@
 {
   "cogs": [{
     "label": "A Browser",
+    "lpLabel": "Business Website",
+    "lpDescription": "Your website is the front door to your sales and marketing process. Don't just test your website in isolation: validate that you're capturing the right data in the right systems.",
     "name": "automatoninc/web",
     "img": "/img/cogs/web.png",
-    "homepage": "https://github.com/run-crank/cog-web"
+    "homepage": "https://github.com/run-crank/cog-web",
+    "useCases": [{
+      "title": "Lead Generation Form QA",
+      "description": "Fill out a form, then check Marketing Automation for the lead.",
+      "steps": "- step: Given I navigate to https://example.com\n- step: When I enter {{test}} into input[name=Email]\n- step: And I submit the form by clicking button[value=Subscribe]\n- step: Then the source field on Marketo Lead {{test}} should be Web"
+    }, {
+      "title": "Marketing Tag and Pixel QA",
+      "description": "Perform a key action, then check that a tag fired.",
+      "steps": "- step: Given I navigate to https://example.com\n- step: When I click the page element a.primary-cta\n- step: Then Google Analytics should have tracked an event with category Link and action Click for tracking ID UA-1234-5"
+    }]
   }, {
     "label": "An Inbox (Mailgun)",
+    "lpLabel": "Email",
+    "lpDescription": "Who cares if your email is pixel-perfect when the program that sends it is misfiring? Automatically QA your welcome, confirmation, nurture, and drip campaigns.",
     "name": "automatoninc/inbox-mailgun",
     "img": "/img/cogs/mailgun.png",
-    "homepage": "https://github.com/run-crank/cog-inbox-mailgun"
+    "homepage": "https://github.com/run-crank/cog-inbox-mailgun",
+    "useCases": [{
+      "title": "Email Onboarding Program QA",
+      "description": "Make sure your onboarding program gets kicked off immediately.",
+      "steps": "- step: ...And I enter {{some.email}} into input[name=Email]\n- step: When I submit the form by clicking button[value=Start Trial]\n- step: Then there should be 1 email in mailgun for {{some.email}}"
+    }, {
+      "title": "Email Personalization QA",
+      "description": "Make sure your template tokens get replaced correctly.",
+      "steps": "- step: When I enroll the {{test}} Hubspot contact into workflow Welcome Email Send\n- step: Then the subject of the 1st mailgun email for {{test}} should be Welcome, Test Name"
+    }]
   }, {
     "label": "DNS",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/dns",
     "img": "/img/cogs/dns.png",
-    "homepage": "https://github.com/run-crank/cog-dns"
+    "homepage": "https://github.com/run-crank/cog-dns",
+    "useCases": []
   }, {
     "label": "Dynamics CRM",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/dynamics",
     "img": "/img/cogs/dynamics.png",
-    "homepage": "https://github.com/run-crank/cog-dynamics"
+    "homepage": "https://github.com/run-crank/cog-dynamics",
+    "useCases": []
   }, {
     "label": "Eloqua",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/eloqua",
     "img": "/img/cogs/eloqua.png",
-    "homepage": "https://github.com/run-crank/cog-eloqua"
+    "homepage": "https://github.com/run-crank/cog-eloqua",
+    "useCases": []
   }, {
-    "label": "Hubspot",
+    "label": "HubSpot",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/hubspot",
     "img": "/img/cogs/hubspot.png",
-    "homepage": "https://github.com/run-crank/cog-hubspot"
+    "homepage": "https://github.com/run-crank/cog-hubspot",
+    "useCases": []
   }, {
     "label": "Iterable",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/iterable",
     "img": "/img/cogs/iterable.png",
-    "homepage": "https://github.com/run-crank/cog-iterable"
+    "homepage": "https://github.com/run-crank/cog-iterable",
+    "useCases": []
   }, {
     "label": "Marketo",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/marketo",
     "img": "/img/cogs/marketo.png",
-    "homepage": "https://github.com/run-crank/cog-marketo"
+    "homepage": "https://github.com/run-crank/cog-marketo",
+    "useCases": []
   }, {
     "label": "ON24",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/on24",
     "img": "/img/cogs/on24.png",
-    "homepage": "https://github.com/run-crank/cog-on24"
+    "homepage": "https://github.com/run-crank/cog-on24",
+    "useCases": []
   },{
     "label": "Pardot",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/pardot",
     "img": "/img/cogs/pardot.png",
-    "homepage": "https://github.com/run-crank/cog-pardot"
+    "homepage": "https://github.com/run-crank/cog-pardot",
+    "useCases": []
   }, {
     "label": "Salesforce",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/salesforce",
     "img": "/img/cogs/salesforce.png",
-    "homepage": "https://github.com/run-crank/cog-marketo"
+    "homepage": "https://github.com/run-crank/cog-marketo",
+    "useCases": []
   }, {
     "label": "SalesLoft",
+    "lpLabel": null,
+    "lpDescription": "",
     "name": "automatoninc/salesloft",
     "img": "/img/cogs/salesloft.png",
-    "homepage": "https://github.com/run-crank/cog-salesloft"
+    "homepage": "https://github.com/run-crank/cog-salesloft",
+    "useCases": []
   }]
 }
