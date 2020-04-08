@@ -3,8 +3,8 @@ import CogHero from '../components/cog-hero';
 import CogList from '../components/cog-list';
 import Layout from '../components/layout';
 
-const IndexPage = () => (
-    <Layout subTitle="Discover Cogs" activeTrail="/discover-cogs">
+const DiscoverCogsPage = ({ location }) => (
+    <Layout subTitle="Discover Cogs" activeTrail="/discover-cogs" location={location}>
         <main>
           <CogHero />
           <CogList />
@@ -12,4 +12,4 @@ const IndexPage = () => (
     </Layout>
 );
 
-export default IndexPage;
+export default DiscoverCogsPage;

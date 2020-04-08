@@ -3,8 +3,8 @@ import Features from '../components/features';
 import HomepageHero from '../components/homepage-hero';
 import Layout from '../components/layout';
 
-const IndexPage = () => (
-    <Layout invertHeaderColors={true}>
+const IndexPage = ({ location }) => (
+    <Layout invertHeaderColors={true} location={location}>
         <main>
             <HomepageHero />
             <Features />

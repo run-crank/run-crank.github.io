@@ -43,12 +43,18 @@ export default class Template extends React.Component {
     const cog = this.state.cog;
     const cogx = this.state.cogExtras
     return (
-      <Layout subTitle={`${cogx.lpLabel || cogx.label} QA Automation`} activeTrail='/discover-cogs'><main>
+      <Layout
+        subTitle={`${cogx.lpLabel || cogx.label} QA Automation`}
+        metaImage={`https://crank.run${cogx.img}`}
+        metaDescription={cogx.lpDescription ? cogx.lpDescription : `${cogx.lpLabel || cogx.label} BDD testing with Crank.`}
+        activeTrail='/discover-cogs'
+        location={this.props.location}
+      ><main>
         <div className="cog-hero jumbotron jumbotron-fluid text-center mb-5" id="top">
           <div className="container">
             <h1 className="display-4">{cogx.lpLabel || cogx.label} QA Automation</h1>
             <h3 className="lead">Run {cogx.lpLabel || cogx.label} test scenarios using the Crank BDD framework.</h3>
-            <img src={this.state.cogExtras.img} alt={cogx.label + ' Logo'} style={{maxHeight: '75px'}} />
+            <img src={cogx.img} alt={cogx.label + ' Logo'} style={{maxHeight: '75px'}} />
           </div>
         </div>
         {cogx.lpDescription ? (<section className="container">

@@ -36,7 +36,7 @@ export default class Template extends React.Component {
     });
 
     return (
-      <Layout subTitle={frontmatter.title} activeTrail={frontmatter.path}><main>
+      <Layout subTitle={frontmatter.title} activeTrail={frontmatter.path} location={this.props.location}><main>
         <div className="doc-content container small">
           <div className="row">
             <div className="col-12 col-lg-3 nav-column">
