@@ -83,13 +83,13 @@ export default class Template extends React.Component {
             ))}
           </div>
         </section>) : ''}
-        {cogx.useCases.length || cogx.lpDescription ? (<section className="mb-5 p-5 bg-light" id="what-is-crank">
+        {cogx.useCases.length || cogx.lpDescription ? (<section className="mb-5 py-5 bg-light" id="what-is-crank">
           <div className="container">
             <h2>What is Crank?</h2>
-            <div className="card-body">
+            <div>
               <p className="card-text">Crank is a BDD test automation framework for SaaS-based business technology.</p>
-              <Link to="/intro" className="btn btn-secondary mr-2 mb-2 mb-md-0">Developer Getting Started</Link>
-              <a href={`https://app.automatoninc.com/signup?utm_medium=referral&utm_source=crank&utm_campaign=${encodeURIComponent(`cogs/${cog.name}`)}`} className="btn btn-outline-secondary" target="_blank">Hosted QA Automation for Business Users</a>
+              <Link to="/intro" className="btn btn-secondary mr-0 mr-md-2 mb-2 mb-md-0 d-block d-md-inline-block">Developer Getting Started</Link>
+              <a href={`https://app.automatoninc.com/signup?utm_medium=referral&utm_source=crank&utm_campaign=${encodeURIComponent(`cogs/${cog.name}`)}`} className="btn btn-outline-secondary d-block d-md-inline-block" target="_blank">Hosted QA Automation for Business Users</a>
             </div>
           </div>
         </section>) : ''}
@@ -221,13 +221,13 @@ export default class Template extends React.Component {
             </div>
           ))}
         </section>
-        {cogx.homepage ? (<section className="mb-5 p-5 bg-light" id="get-involved">
+        {cogx.homepage ? (<section className="mb-5 py-5 bg-light" id="get-involved">
           <div className="container">
-            <h2>Contribute</h2>
-            <div className="card-body">
-              <p className="card-text">This Cog is open source.</p>
-              <a href={cogx.homepage} target="_blank" className="btn btn-secondary mr-2 mb-2 mb-md-0"><Icon className="mr-1 align-text-top" icon={GitHub} width={18} height={18} fill="#fff" />Contribute on GitHub</a>
-              <a href="https://spectrum.chat/crank" target="_blank" className="btn btn-outline-secondary">Join the Crank Spectrum Community</a>
+            <h2>Missing a Step You Need?</h2>
+            <div>
+              <p className="card-text">This Cog is open source! Your contributions are welcome and encouraged.</p>
+              <a href={cogx.homepage} target="_blank" className="btn btn-secondary mr-0 mr-sm-2 mb-2 mb-sm-0 d-block d-sm-inline-block"><Icon className="mr-1 align-text-top" icon={GitHub} width={18} height={18} fill="#fff" />Contribute on GitHub</a>
+              <a href="https://spectrum.chat/crank" target="_blank" className="btn btn-outline-secondary d-block d-sm-inline-block">Join the Crank Spectrum Community</a>
             </div>
           </div>
         </section>) : ''}
