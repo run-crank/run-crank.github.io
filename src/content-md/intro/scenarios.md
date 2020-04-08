@@ -3,6 +3,7 @@ section: "intro"
 navOrder: 3
 path: "/intro/scenarios"
 title: "Scenarios"
+summary: "Learn how to author BDD test scenarios for your business technology."
 ---
 
 This page documents how to author Crank Scenario files.

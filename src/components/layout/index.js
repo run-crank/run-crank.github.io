@@ -9,10 +9,10 @@ import './_layout.scss'
 
 const TemplateWrapper = ({ children, activeTrail, subTitle, invertHeaderColors, location, metaDescription, metaImage, twCardType, ogType }) => (
     <div className="app-wrapper">
-        <Helmet title={"Crank - " + (subTitle || 'BDD Test Automation for Integrated SaaS')}>
-        <meta name="og:title" content={subTitle || 'BDD Test Automation for Integrated SaaS'}></meta>
-        <meta name="twitter:title" content={subTitle || 'BDD Test Automation for Integrated SaaS'}></meta>
-        <meta name="twitter:card" content={twCardType || 'summary'}></meta>
+        <Helmet title={"Crank - " + (subTitle || 'BDD Test Automation for Integrated Business Technology')}>
+        <meta name="og:title" content={subTitle || 'BDD Test Automation for Integrated Business Technology'}></meta>
+        <meta name="twitter:title" content={subTitle || 'BDD Test Automation for Integrated Business Technology'}></meta>
+        <meta name="twitter:card" content={twCardType || 'summary_large_image'}></meta>
         <meta name="og:type" content={ogType || 'website'}></meta>
         <meta name="twitter:image" content={metaImage || 'https://crank.run/img/crank-logo.png'}></meta>
         <meta name="og:image" content={metaImage || 'https://crank.run/img/crank-logo.png'}></meta>

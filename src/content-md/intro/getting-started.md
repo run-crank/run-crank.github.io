@@ -3,6 +3,7 @@ section: "intro"
 navOrder: 1
 path: "/intro"
 title: "Introduction"
+summary: "An introductory guide to Crank, the open BDD test automation framework for business technology."
 ---
 
 Crank is a BDD test automation framework for validating workflows, apps, and

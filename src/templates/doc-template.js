@@ -36,7 +36,12 @@ export default class Template extends React.Component {
     });
 
     return (
-      <Layout subTitle={frontmatter.title} activeTrail={frontmatter.path} location={this.props.location}><main>
+      <Layout
+        subTitle={frontmatter.title}
+        metaDescription={frontmatter.summary}
+        activeTrail={frontmatter.path}
+        location={this.props.location}
+      ><main>
         <div className="doc-content container small">
           <div className="row">
             <div className="col-12 col-lg-3 nav-column">
@@ -80,6 +85,7 @@ export const pageQuery = graphql`
         section
         path
         title
+        summary
       }
       headings(depth: h2) {
         value

@@ -3,6 +3,7 @@ section: "intro"
 navOrder: 4
 path: "/intro/community"
 title: "Community"
+summary: "Get involved with the Crank business technology test automation community."
 ---
 
 Crank aims to grow into an ecosystem of many Cogs with an active, vibrant

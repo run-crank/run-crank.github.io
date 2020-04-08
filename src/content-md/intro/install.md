@@ -3,6 +3,7 @@ section: "intro"
 navOrder: 2
 path: "/intro/install"
 title: "Installation"
+summary: "Learn how to install Crank, the open BDD test automation framework for business technology."
 ---
 
 You can install Crank in a variety of ways. Given that it's a command-line
