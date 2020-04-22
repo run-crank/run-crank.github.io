@@ -349,7 +349,7 @@
   {
     "name": "automatoninc/hubspot",
     "label": "HubSpot",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -375,7 +375,7 @@
               {
                 "key": "hs_object_id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "The contact's ID",
                 "help": ""
               },
@@ -423,7 +423,7 @@
               {
                 "key": "hs_object_id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "The contact's ID",
                 "help": ""
               },
@@ -504,38 +504,31 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           },
           {
-            "id": "matchedWorkflows",
-            "type": 1,
+            "id": "contact",
+            "type": 0,
             "guaranteedFieldsList": [
               {
-                "key": "name",
-                "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Name",
-                "help": ""
-              },
-              {
-                "key": "id",
+                "key": "hs_object_id",
                 "optionality": 0,
                 "type": 3,
-                "description": "The Workflow's ID",
+                "description": "The contact's ID",
                 "help": ""
               },
               {
-                "key": "type",
+                "key": "createdate",
                 "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Type",
+                "type": 5,
+                "description": "The Contact's Create Date",
                 "help": ""
               },
               {
-                "key": "description",
+                "key": "lastmodifieddate",
                 "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Description",
+                "type": 5,
+                "description": "The Contact's Last Modified Date",
                 "help": ""
               }
             ],
@@ -589,7 +582,7 @@
               {
                 "key": "hs_object_id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "The Contact's ID",
                 "help": ""
               },
@@ -651,7 +644,7 @@
               {
                 "key": "id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "The Contact's ID",
                 "help": ""
               },
@@ -712,42 +705,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
-          },
-          {
-            "id": "matchedWorkflows",
-            "type": 1,
-            "guaranteedFieldsList": [
-              {
-                "key": "name",
-                "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Name",
-                "help": ""
-              },
-              {
-                "key": "id",
-                "optionality": 0,
-                "type": 3,
-                "description": "The Workflow's ID",
-                "help": ""
-              },
-              {
-                "key": "type",
-                "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Type",
-                "help": ""
-              },
-              {
-                "key": "description",
-                "optionality": 0,
-                "type": 1,
-                "description": "The Workflow's Description",
-                "help": ""
-              }
-            ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/hubspot",
@@ -1166,7 +1124,7 @@
   {
     "name": "automatoninc/marketo",
     "label": "Marketo",
-    "version": "0.5.1",
+    "version": "0.5.2",
     "homepage": "https://github.com/run-crank/cog-marketo",
     "stepDefinitionsList": [
       {
@@ -1365,12 +1323,12 @@
               {
                 "key": "id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "Lead's Marketo ID",
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/marketo",
@@ -1418,7 +1376,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/marketo",
@@ -1447,12 +1405,12 @@
               {
                 "key": "id",
                 "optionality": 0,
-                "type": 1,
+                "type": 3,
                 "description": "Lead's Marketo ID",
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/marketo",
@@ -1669,41 +1627,6 @@
         ],
         "expectedRecordsList": [
           {
-            "id": "matchedActivities",
-            "type": 1,
-            "guaranteedFieldsList": [
-              {
-                "key": "id",
-                "optionality": 0,
-                "type": 3,
-                "description": "Activity's Marketo ID",
-                "help": ""
-              },
-              {
-                "key": "leadId",
-                "optionality": 0,
-                "type": 3,
-                "description": "Lead's Marketo ID",
-                "help": ""
-              },
-              {
-                "key": "activityDate",
-                "optionality": 0,
-                "type": 5,
-                "description": "Activity's Date",
-                "help": ""
-              },
-              {
-                "key": "activityTypeId",
-                "optionality": 0,
-                "type": 3,
-                "description": "Activity Type's ID",
-                "help": ""
-              }
-            ],
-            "mayHaveMoreFields": true
-          },
-          {
             "id": "activity",
             "type": 0,
             "guaranteedFieldsList": [
@@ -1771,7 +1694,7 @@
   {
     "name": "automatoninc/on24",
     "label": "ON24",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -1871,7 +1794,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/on24",
@@ -1982,7 +1905,7 @@
   {
     "name": "automatoninc/pardot",
     "label": "Pardot",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "homepage": "https://github.com/run-crank/cog-pardot",
     "stepDefinitionsList": [
       {
@@ -2134,6 +2057,124 @@
         ],
         "cog": "automatoninc/pardot",
         "cogLabel": "Pardot"
+      },
+      {
+        "stepId": "CheckListMembership",
+        "name": "Check Pardot List Membership",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<email>.+) pardot prospect should (?<optInOut>be opted in to|be opted out of|not be a member of) list (?<listId>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "email",
+            "optionality": 1,
+            "type": 6,
+            "description": "The Email Address of the Prospect",
+            "help": ""
+          },
+          {
+            "key": "optInOut",
+            "optionality": 1,
+            "type": 1,
+            "description": "One of \"be opted in to\", \"be opted out of\", or \"not be a member of\"",
+            "help": ""
+          },
+          {
+            "key": "listId",
+            "optionality": 1,
+            "type": 3,
+            "description": "The ID of the Pardot List",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "listMembership",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "List Membership's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "list_id",
+                "optionality": 0,
+                "type": 3,
+                "description": "List's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "prospect_id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Prospect's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "opted_out",
+                "optionality": 0,
+                "type": 2,
+                "description": "Opted Out",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date created",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          },
+          {
+            "id": "prospect",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Prospect's Pardot ID",
+                "help": ""
+              },
+              {
+                "key": "email",
+                "optionality": 0,
+                "type": 6,
+                "description": "Prospect's Email Address",
+                "help": ""
+              },
+              {
+                "key": "created_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was created",
+                "help": ""
+              },
+              {
+                "key": "updated_at",
+                "optionality": 0,
+                "type": 5,
+                "description": "The date/time the Prospect was updated",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/pardot",
+        "cogLabel": "Pardot"
       }
     ],
     "authFieldsList": [
@@ -2164,7 +2205,7 @@
   {
     "name": "automatoninc/salesforce",
     "label": "Salesforce",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "homepage": "https://github.com/run-crank/cog-salesforce",
     "stepDefinitionsList": [
       {
@@ -2195,7 +2236,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/salesforce",
@@ -2229,7 +2270,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/salesforce",
@@ -2263,7 +2304,48 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "CreateObject",
+        "name": "Create a Salesforce Object",
+        "help": "",
+        "type": 0,
+        "expression": "/create a salesforce (?<objName>[a-zA-Z0-9]+) object/",
+        "expectedFieldsList": [
+          {
+            "key": "objName",
+            "optionality": 1,
+            "type": 1,
+            "description": "Salesforce object name",
+            "help": ""
+          },
+          {
+            "key": "salesforceObject",
+            "optionality": 1,
+            "type": 9,
+            "description": "where keys represent object field names as represented in the SFDC API",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "salesforceObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Object's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/salesforce",
@@ -2297,7 +2379,7 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/salesforce",
@@ -2413,6 +2495,47 @@
         "cogLabel": "Salesforce"
       },
       {
+        "stepId": "DeleteObject",
+        "name": "Delete a Salesforce Object",
+        "help": "",
+        "type": 0,
+        "expression": "/delete the salesforce (?<objName>[a-zA-Z0-9]+) object with id (?<id>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "objName",
+            "optionality": 1,
+            "type": 1,
+            "description": "Salesforce Object name",
+            "help": ""
+          },
+          {
+            "key": "id",
+            "optionality": 1,
+            "type": 1,
+            "description": "Object ID",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "salesforceObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Object's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
         "stepId": "DeleteOpportunity",
         "name": "Delete a Salesforce Opportunity",
         "help": "",
@@ -2447,7 +2570,55 @@
                 "help": ""
               }
             ],
-            "mayHaveMoreFields": true
+            "mayHaveMoreFields": false
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
+        "stepId": "UpdateObject",
+        "name": "Update a Salesforce Object",
+        "help": "",
+        "type": 0,
+        "expression": "/update the salesforce (?<objName>[a-zA-Z0-9]+) object identified by id (?<identifier>[^s]+)/",
+        "expectedFieldsList": [
+          {
+            "key": "objName",
+            "optionality": 1,
+            "type": 1,
+            "description": "Salesforce object name",
+            "help": ""
+          },
+          {
+            "key": "identifier",
+            "optionality": 1,
+            "type": 1,
+            "description": "Salesforce object ID",
+            "help": ""
+          },
+          {
+            "key": "salesforceObject",
+            "optionality": 1,
+            "type": 9,
+            "description": "where keys represent object field names as represented in the SFDC API",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "salesforceObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 1,
+                "description": "Object's SalesForce ID",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": false
           }
         ],
         "cog": "automatoninc/salesforce",
@@ -2500,34 +2671,6 @@
           {
             "id": "account",
             "type": 0,
-            "guaranteedFieldsList": [
-              {
-                "key": "Id",
-                "optionality": 0,
-                "type": 1,
-                "description": "Account's SalesForce ID",
-                "help": ""
-              },
-              {
-                "key": "CreatedDate",
-                "optionality": 0,
-                "type": 5,
-                "description": "Account's Created Date",
-                "help": ""
-              },
-              {
-                "key": "LastModifiedDate",
-                "optionality": 0,
-                "type": 5,
-                "description": "Account's Last Modified Date",
-                "help": ""
-              }
-            ],
-            "mayHaveMoreFields": false
-          },
-          {
-            "id": "matchedAccounts",
-            "type": 1,
             "guaranteedFieldsList": [
               {
                 "key": "Id",
@@ -2800,6 +2943,82 @@
         "cogLabel": "Salesforce"
       },
       {
+        "stepId": "ObjectFieldEquals",
+        "name": "Check a field on a Salesforce Object",
+        "help": "",
+        "type": 1,
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce (?<objName>[a-zA-Z0-9]+) object with id (?<id>[^s]+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expectedFieldsList": [
+          {
+            "key": "objName",
+            "optionality": 1,
+            "type": 1,
+            "description": "Salesforce object name",
+            "help": ""
+          },
+          {
+            "key": "id",
+            "optionality": 1,
+            "type": 1,
+            "description": "Object ID",
+            "help": ""
+          },
+          {
+            "key": "field",
+            "optionality": 1,
+            "type": 1,
+            "description": "Field name to check",
+            "help": ""
+          },
+          {
+            "key": "operator",
+            "optionality": 1,
+            "type": 1,
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "help": ""
+          },
+          {
+            "key": "expectedValue",
+            "optionality": 1,
+            "type": 0,
+            "description": "Expected field value",
+            "help": ""
+          }
+        ],
+        "expectedRecordsList": [
+          {
+            "id": "salesforceObject",
+            "type": 0,
+            "guaranteedFieldsList": [
+              {
+                "key": "Id",
+                "optionality": 0,
+                "type": 3,
+                "description": "Object's SalesForce ID",
+                "help": ""
+              },
+              {
+                "key": "CreatedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Object's Created Date",
+                "help": ""
+              },
+              {
+                "key": "LastModifiedDate",
+                "optionality": 0,
+                "type": 5,
+                "description": "Object's Last Modified Date",
+                "help": ""
+              }
+            ],
+            "mayHaveMoreFields": true
+          }
+        ],
+        "cog": "automatoninc/salesforce",
+        "cogLabel": "Salesforce"
+      },
+      {
         "stepId": "OpportunityFieldEquals",
         "name": "Check a field on a Salesforce Opportunity",
         "help": "",
@@ -2846,34 +3065,6 @@
           {
             "id": "opportunity",
             "type": 0,
-            "guaranteedFieldsList": [
-              {
-                "key": "Id",
-                "optionality": 0,
-                "type": 1,
-                "description": "Opportunity's SalesForce ID",
-                "help": ""
-              },
-              {
-                "key": "CreatedDate",
-                "optionality": 0,
-                "type": 5,
-                "description": "Opportunity's Created Date",
-                "help": ""
-              },
-              {
-                "key": "LastModifiedDate",
-                "optionality": 0,
-                "type": 5,
-                "description": "Opportunity's Last Modified Date",
-                "help": ""
-              }
-            ],
-            "mayHaveMoreFields": true
-          },
-          {
-            "id": "matchedOpportunities",
-            "type": 1,
             "guaranteedFieldsList": [
               {
                 "key": "Id",
