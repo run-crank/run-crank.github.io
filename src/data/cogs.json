@@ -98,11 +98,19 @@
   }, {
     "label": "Salesforce",
     "lpLabel": null,
-    "lpDescription": "",
+    "lpDescription": "Test your Salesforce Workflow and Process Builder automation as rigorously as you test your Apex code.",
     "name": "automatoninc/salesforce",
     "img": "/img/cogs/salesforce.png",
     "homepage": "https://github.com/run-crank/cog-marketo",
-    "useCases": []
+    "useCases": [{
+      "title": "Salesforce Alert QA",
+      "description": "Make sure Account owners receive alerts for high priority cases.",
+      "steps": "- step: Given I create a Salesforce Case object with...\n  data:\n    SuppliedName: High Priority Case (Test)\n    Priority: High\n    AccountId: '{{Fixtures.Accounts.PlatinumSLA.Id}}'\n- step: Then there should be 1 email in mailgun for {{Fixtures.Users.PlatinumSLA.Email}}\n  failAfter: 60\n- step: And the subject of the 1st mailgun email for {{Fixtures.Users.PlatinumSLA.EmailAddress}} should contain High Priority Case Alert"
+    }, {
+      "title": "Salesforce Lead Sync QA",
+      "description": "Make sure lead updates are synced back to marketing automation.",
+      "steps": "- step: Given I create a Salesforce Lead with...\n  data:\n    Email: '{{Test.Email}}'\n    FirstName: '{{Test.GivenName}}'\n    LastName: '{{Test.FamilyName}}'\n    Company: '{{Test.Company}}'\n- waitFor: 60\n  step: Then the Status__c field on Marketo Lead {{Test.Email}} should be Open - Not Contacted\n- step: And when I update the Salesforce Lead object identified by Id {{salesforce.lead.Id}} with...\n  data:\n    Status: Working - Contacted\n- waitFor: 60\n  step: Then the Status__c field on Marketo Lead {{Test.Email}} should be Working - Contacted"
+    }]
   }, {
     "label": "SalesLoft",
     "lpLabel": null,
