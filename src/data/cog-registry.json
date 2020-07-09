@@ -57,7 +57,7 @@
   {
     "name": "automatoninc/dynamics",
     "label": "Dynamics",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -139,7 +139,7 @@
         "name": "Check a field on a Dynamics CRM Lead",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on dynamics crm lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on dynamics crm lead (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -159,12 +159,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -349,7 +349,7 @@
   {
     "name": "automatoninc/hubspot",
     "label": "HubSpot",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -543,7 +543,7 @@
         "name": "Check a field on a HubSpot Contact",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on hubspot contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on hubspot contact (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectation>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -563,12 +563,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectation",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -726,7 +726,7 @@
   {
     "name": "automatoninc/inbox-mailgun",
     "label": "Inbox (Mailgun)",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -970,7 +970,7 @@
   {
     "name": "automatoninc/iterable",
     "label": "Iterable",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -1045,7 +1045,7 @@
         "name": "Check a field on an Iterable Contact",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_ ]+) field on iterable contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_ ]+) field on iterable contact (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -1065,12 +1065,12 @@
             "key": "operator",
             "optionality": 1,
             "type": 1,
-            "description": "Check Logic (one of be less than, be greater than, be, contain, not be, or not contain)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -1124,7 +1124,7 @@
   {
     "name": "automatoninc/marketo",
     "label": "Marketo",
-    "version": "0.5.2",
+    "version": "0.6.0",
     "homepage": "https://github.com/run-crank/cog-marketo",
     "stepDefinitionsList": [
       {
@@ -1146,6 +1146,13 @@
             "optionality": 1,
             "type": 0,
             "description": "Smart campaign name or numeric id",
+            "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
             "help": ""
           }
         ],
@@ -1279,6 +1286,13 @@
             "type": 9,
             "description": "Map of custom object data whose keys are field names.",
             "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
+            "help": ""
           }
         ],
         "expectedRecordsList": [
@@ -1361,6 +1375,13 @@
             "type": 9,
             "description": "Map of custom dedupeFields data whose keys are field names.",
             "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
+            "help": ""
           }
         ],
         "expectedRecordsList": [
@@ -1395,6 +1416,13 @@
             "type": 6,
             "description": "Lead's email address",
             "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
+            "help": ""
           }
         ],
         "expectedRecordsList": [
@@ -1421,7 +1449,7 @@
         "name": "Check a field on a Marketo Custom Object",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on the (?<name>.+) marketo custom object linked to lead (?<linkValue>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on the (?<name>.+) marketo custom object linked to lead (?<linkValue>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "name",
@@ -1448,12 +1476,12 @@
             "key": "operator",
             "optionality": 1,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "The expected value of the field",
             "help": ""
@@ -1463,6 +1491,13 @@
             "optionality": 0,
             "type": 9,
             "description": "Map of custom dedupeFields data whose keys are field names.",
+            "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
             "help": ""
           }
         ],
@@ -1504,7 +1539,7 @@
         "name": "Check a field on a Marketo Lead",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on marketo lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_-]+) field on marketo lead (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectation>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -1524,14 +1559,21 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectation",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
+            "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
             "help": ""
           }
         ],
@@ -1623,6 +1665,13 @@
             "type": 9,
             "description": "Represents additional parameters that should be used to validate an activity. The key in the object represents an attribute name and the value represents the expected value",
             "help": ""
+          },
+          {
+            "key": "partitionId",
+            "optionality": 0,
+            "type": 3,
+            "description": "ID of partition lead belongs to",
+            "help": ""
           }
         ],
         "expectedRecordsList": [
@@ -1694,7 +1743,7 @@
   {
     "name": "automatoninc/on24",
     "label": "ON24",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "homepage": "",
     "stepDefinitionsList": [
       {
@@ -1805,21 +1854,21 @@
         "name": "Check a field on an ON24 registrant",
         "help": "This step attempts to find an event registrant for the given event ID and email, then checks the value of a specified registrant field.",
         "type": 1,
-        "expression": "/the (?<field>.+) field on ON24 registrant (?<email>.+) for event (?<eventId>\\d+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>.+) field on ON24 registrant (?<email>.+) for event (?<eventId>\\d+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
             "optionality": 1,
             "type": 6,
             "description": "Registrant's email address",
-            "help": "This email address is used to find the ON24 registrant."
+            "help": ""
           },
           {
             "key": "eventId",
             "optionality": 1,
             "type": 3,
             "description": "Event ID",
-            "help": "This ID is used to find the ON24 registrant. Event IDs can be found in your ON24 event dashboard."
+            "help": ""
           },
           {
             "key": "field",
@@ -1832,12 +1881,12 @@
             "key": "operator",
             "optionality": 1,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -1905,7 +1954,7 @@
   {
     "name": "automatoninc/pardot",
     "label": "Pardot",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "homepage": "https://github.com/run-crank/cog-pardot",
     "stepDefinitionsList": [
       {
@@ -1987,7 +2036,7 @@
         "name": "Check a field on a Pardot Prospect",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on pardot prospect (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on pardot prospect (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -2007,12 +2056,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -2205,7 +2254,7 @@
   {
     "name": "automatoninc/salesforce",
     "label": "Salesforce",
-    "version": "0.6.0",
+    "version": "0.7.0",
     "homepage": "https://github.com/run-crank/cog-salesforce",
     "stepDefinitionsList": [
       {
@@ -2629,7 +2678,7 @@
         "name": "Check a field on a Salesforce Account",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce account with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce account with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "idField",
@@ -2656,12 +2705,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "The expected value of the field",
             "help": ""
@@ -2705,7 +2754,7 @@
         "name": "Check a field on a Salesforce Campaign Member",
         "help": "",
         "type": 1,
-        "expression": "/the salesforce lead (?<email>.+) should have campaign member (?<field>[a-z0-9_]+) (?<operator>set to|not set to|containing|not containing|less than|greater than) (?<expectedValue>.+) on campaign (?<campaignId>.+)/",
+        "expression": "/the salesforce lead (?<email>.+) should have campaign member (?<field>[a-z0-9_]+) (?<operator>set to one of|set to|set|not set to one of|not set to|not set|containing|not containing|less than|greater than) ?(?<expectedValue>.+)? on campaign (?<campaignId>.+)/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -2732,12 +2781,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (set to, not set to, containing, not containing, greater than, or less than)",
+            "description": "Check Logic (set to, not set to, containing, not containing, greater than, less than, set, not set, set to one of, or not set to one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -2809,7 +2858,7 @@
         "name": "Check a field on a Salesforce Contact",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce contact (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce contact (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -2829,12 +2878,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -2878,7 +2927,7 @@
         "name": "Check a field on a Salesforce Lead",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce lead (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce lead (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -2898,12 +2947,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -2947,7 +2996,7 @@
         "name": "Check a field on a Salesforce Object",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce (?<objName>[a-zA-Z0-9]+) object with id (?<id>[^s]+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce (?<objName>[a-zA-Z0-9]+) object with id (?<id>[^s]+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "objName",
@@ -2974,12 +3023,12 @@
             "key": "operator",
             "optionality": 1,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -3023,7 +3072,7 @@
         "name": "Check a field on a Salesforce Opportunity",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce opportunity with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectedValue>.+)/",
+        "expression": "/the (?<field>[a-zA-Z0-9_]+) field on salesforce opportunity with (?<idField>[a-zA-Z0-9_]+) (?<identifier>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectedValue>.+)?/",
         "expectedFieldsList": [
           {
             "key": "idField",
@@ -3050,12 +3099,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectedValue",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "The expected value of the field",
             "help": ""
@@ -3220,7 +3269,7 @@
   {
     "name": "automatoninc/salesloft",
     "label": "Salesloft",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "homepage": "https://github.com/run-crank/cog-salesloft",
     "stepDefinitionsList": [
       {
@@ -3324,7 +3373,7 @@
         "name": "Check a field on a SalesLoft Person",
         "help": "",
         "type": 1,
-        "expression": "/the (?<field>[ a-zA-Z0-9_-]+) field on salesloft person (?<email>.+) should (?<operator>be less than|be greater than|be|contain|not be|not contain) (?<expectation>.+)/",
+        "expression": "/the (?<field>[ a-zA-Z0-9_-]+) field on salesloft person (?<email>.+) should (?<operator>be set|not be set|be less than|be greater than|be one of|be|contain|not be one of|not be|not contain) ?(?<expectation>.+)?/",
         "expectedFieldsList": [
           {
             "key": "email",
@@ -3344,12 +3393,12 @@
             "key": "operator",
             "optionality": 0,
             "type": 1,
-            "description": "Check Logic (be, not be, contain, not contain, be greater than, or be less than)",
+            "description": "Check Logic (be, not be, contain, not contain, be greater than, be less than, be set, not be set, be one of, or not be one of)",
             "help": ""
           },
           {
             "key": "expectation",
-            "optionality": 1,
+            "optionality": 0,
             "type": 0,
             "description": "Expected field value",
             "help": ""
@@ -3403,7 +3452,7 @@
   {
     "name": "automatoninc/web",
     "label": "A Browser",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "homepage": "https://github.com/run-crank/cog-web",
     "stepDefinitionsList": [
       {
