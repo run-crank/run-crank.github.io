@@ -175,6 +175,30 @@ for comparison.
 
 ---
 
+## Date Tokens
+
+When running Scenarios that involve date/time-based data, it's common to want
+to make assertions based on relative dates and times. In order to enable those
+use-cases, Crank supports special **Date Tokens** in Scenario files...
+
+```yaml
+- step: Then the CreatedDate field on Salesforce Lead test@e.com should be less than {{date(1 day from now)}}
+```
+
+Note that you can specify date granularity and timezones in your tokens with
+date phrases like this:
+
+- **Day-Granularity**: `{{date(1 day ago)}}` or `{{date(2 weeks ago)}}`
+- **Second-Granularity**: `{{date(24 hours ago)}}` or `{{date(47 seconds ago)}}`
+- **In UTC**: `{{date(midnight yesterday in utc)}}`
+
+Also note that all date tokens are compuated at Scenario-parse time (as opposed
+to step execution time), which means the value of a date token in one step will
+always equal the value of a date token in a subsequent step, if the same date
+phrase is used.
+
+---
+
 ## Dynamic Tokens
 
 After each step, Cogs may also expose contextual details dynamically as tokens.
