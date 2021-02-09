@@ -13,8 +13,8 @@ const Header = ({ invertColors, activeTrail }) => (
     <header className={'header' + (invertColors ? ' inverted' : '')}>
         <div className="above">
             <div className="container">
-                <a href="https://www.automatoninc.com?utm_source=crank">
-                    <img src="/img/automaton-logo.png" className="parent-logo" />
+                <a href="https://www.stackmoxie.com/?utm_source=crank">
+                    <img src="/img/stack-moxie-logo.png" className="parent-logo" />
                 </a>
             </div>
         </div>
@@ -47,8 +47,8 @@ const Header = ({ invertColors, activeTrail }) => (
             </div>
         {/*<div className="above">
             <div className="container">
-                <a href="https://www.automatoninc.com?utm_source=crank">
-                    <img src="/img/automaton-logo.png" className="parent-logo" />
+                <a href="https://www.stackmoxie.com/?utm_source=crank">
+                    <img src="/img/stack-moxie-logo.png" className="parent-logo" />
                 </a>
             </div>
         </div>
