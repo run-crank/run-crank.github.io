@@ -18,7 +18,7 @@ const Footer = () => (
                     </div>
                 </div>
                 <div className="footer-by col-12 col-lg-5">
-                    <span className="by-automaton">Made with radical hospitality by <a href="https://www.stackmoxie.com/?utm_source=crank"><Icon className="mr-1 align-text-top" icon={Pineapple} width={16} height={16} fill="#b69d65" />StackMoxie</a></span>
+                    <span className="by-automaton">Made with radical hospitality by <a href="https://www.stackmoxie.com/?utm_source=crank"><Icon className="mr-1 align-text-top" icon={Pineapple} width={16} height={16} fill="#b69d65" />Stack Moxie</a></span>
                 </div>
             </div>
         </div>
