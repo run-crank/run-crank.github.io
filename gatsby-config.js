@@ -3,6 +3,13 @@ module.exports = {
     title: `Crank - BDD Test Automation for Integrated SaaS`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-5GPV46Z",
+        includeInDevelopment: false,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `svgo`,
     `gatsby-plugin-sass`,
